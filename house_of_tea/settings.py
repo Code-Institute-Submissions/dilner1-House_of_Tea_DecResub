@@ -88,9 +88,10 @@ ACCOUNT_AUTHENTIFICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'optional'
 ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE =True
-ACCOUNT_USERNAME_MIN_LENGTH = 4
-LOGIN_URL = 'accounts/login/'
+ACCOUNT_USERNAME_MIN_LENGTH = 5
+LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
+
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
