@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-<h1 class="title">Products Page</h1>
+<h1 class="title">Products</h1>
 
 {% for product in products %}
   <div class="card">
@@ -10,9 +10,9 @@
     <div class="card-body">
       <h5 class="card-title">{{ product.name }}</h5>
       <p class="card-text">{{ product.info }}</p>
+      <P>Category: {{ product.category }}</P>
       <button class="btn btn-info">Add to Basket</button>
       <p class="d-inline pl-5">£ {{ product.price|floatformat:2 }} </p>
-      <P>Category: {{ product.category }}</P>
     </div>
   </div>
 {% endfor %}
