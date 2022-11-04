@@ -5,6 +5,11 @@ body {
     width: 100%;
 }
 
+.title {
+    text-align: center;
+}
+
+
 /* Nav Bar Styling */
 .gradient {
     /* fallback for older browsers */
