@@ -9,6 +9,17 @@ body {
     text-align: center;
 }
 
+.basket-icon > i {
+    font-size: 1.5rem;
+}
+
+.dropdown-menu {
+  background-color: #f6fff8;
+}
+
+.dropdown-item:hover {
+  background-color: rgb(182, 196, 141);
+}
 
 /* Nav Bar Styling */
 .gradient {
