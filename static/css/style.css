@@ -33,3 +33,18 @@ body {
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background: linear-gradient(to right, rgba(182, 196, 141, 1), rgba(214, 221, 190, 1))
 }
+
+
+
+/* Products Page */
+
+.card {
+    display: inline-block;
+    width: 18rem;
+}
+
+.card-text {
+  height: 4rem;
+  overflow-x:hidden;
+  white-space: nowrap;
+}
