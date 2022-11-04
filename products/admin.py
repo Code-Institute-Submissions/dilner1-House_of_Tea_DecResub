@@ -9,5 +9,7 @@ class ProductAdmin(admin.ModelAdmin):
             'name',
         )
 
+        ordering = ('sku',)
+
 admin.site.register(Categories)
-admin.site.register(Product)
+admin.site.register(Product, ProductAdmin)
