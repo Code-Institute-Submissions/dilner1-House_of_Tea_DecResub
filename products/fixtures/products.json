@@ -7,9 +7,32 @@
             "sku": "hunan-jasmine-tea", 
             "price": 15, 
             "info": "A very fragrant tea from Hunan province, the local people have been growing this jsamine tea for generations. This is perfect for relaxing in the afternoon with it's subtle flavours and lower caffeine content。", 
-            "image": "https://res.cloudinary.com/ddxxrzq7g/image/upload/v1656373211/pexels-valeria-boltneva-11213971_fmxukb.jpg", 
             "category": "1",
             "image_url": "https://res.cloudinary.com/ddxxrzq7g/image/upload/v1656373209/pexels-valeria-boltneva-11213970_yjrcxv.jpg",
-            "image": ""
+            "image": "pexels-valeria-boltneva-11213970.jpg"
+    }},
+    {
+        "model": "products.product",
+        "pk": 2,
+        "fields": {
+            "name": "Four Piece Matcha Set", 
+            "sku": "4-piece-matcha-set", 
+            "price": 40, 
+            "info": "This set comes from Saitama Prefeture in Japan. Lovingly crafted by a family of tea pot makers made for matcha tea, but of course it can be used for any kind of tea. Comes with a pot, two small cups and a mixing bowl - the whisk is also included.", 
+            "category": "2",
+            "image_url": "https://res.cloudinary.com/ddxxrzq7g/image/upload/v1656371093/pexels-charlotte-may-5946632_aabtnn.jpg",
+            "image": "pexels-charlotte-may-5946632.jpg"
+    }},
+    {
+        "model": "products.product",
+        "pk": 3,
+        "fields": {
+            "name": "Traditional Tea Strainer", 
+            "sku": "tea-strainer", 
+            "price": 7, 
+            "info": "A traditional wood tea strainer, best used for larger tea pearls.", 
+            "category": "3",
+            "image_url": "https://res.cloudinary.com/ddxxrzq7g/image/upload/v1656372761/pexels-eva-elijas-6568862_cgm6ml.jpg",
+            "image": "pexels-eva-elijas-6568862.jpg"
     }}
 ]
