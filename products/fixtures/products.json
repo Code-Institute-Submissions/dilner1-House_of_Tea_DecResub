@@ -4,7 +4,7 @@
         "pk": 1,
         "fields": {
             "name": "Hunan Jasemine Tea", 
-            "sku": "hunan-jasmine-tea", 
+            "sku": "1001", 
             "price": 15, 
             "info": "A very fragrant tea from Hunan province, the local people have been growing this jsamine tea for generations. This is perfect for relaxing in the afternoon with it's subtle flavours and lower caffeine content。", 
             "category": "1",
@@ -16,7 +16,7 @@
         "pk": 2,
         "fields": {
             "name": "Four Piece Matcha Set", 
-            "sku": "4-piece-matcha-set", 
+            "sku": "2001", 
             "price": 40, 
             "info": "This set comes from Saitama Prefeture in Japan. Lovingly crafted by a family of tea pot makers made for matcha tea, but of course it can be used for any kind of tea. Comes with a pot, two small cups and a mixing bowl - the whisk is also included.", 
             "category": "2",
@@ -28,7 +28,7 @@
         "pk": 3,
         "fields": {
             "name": "Traditional Tea Strainer", 
-            "sku": "tea-strainer", 
+            "sku": "3001", 
             "price": 7, 
             "info": "A traditional wood tea strainer, best used for larger tea pearls.", 
             "category": "3",
