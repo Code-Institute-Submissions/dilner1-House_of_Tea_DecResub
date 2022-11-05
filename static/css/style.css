@@ -1,13 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Noto+Nastaliq+Urdu&display=swap');
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Kolker+Brush&family=Libre+Baskerville&family=Montserrat:wght@300;500&display=swap');
 
+/* Base Styling */
 body {
-    font-family: Noto Nastaliq Urdu, 'Times New Roman', Times, serif;
+    font-family: 'Montserrat' ,Arial, Helvetica, sans-serif
     width: 100%;
 }
 
+.logo {
+  font-family: 'Kolker Brush';
+  font-size: 2rem;
+}
+
 .title {
+    font-family: 'Libre Baskerville', 'Times New Roman', Times, serif;
     text-align: center;
-    padding-bottom: 1rem;
+    padding-top: 2rem;
     color: rgb(50, 50, 50);
 }
 
