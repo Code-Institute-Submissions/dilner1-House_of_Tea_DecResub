@@ -6,3 +6,18 @@ def basketView(request):
         This view loads the basket page
     """
     return render(request, 'basket/basket.html')
+
+def addToBasketView(request, pk):
+    """
+        This view adds an item to the basket
+    """
+    quantity = int(request.POST.get('quantity'))
+    redirect_url = request.POST.get('redirect_url')
+    basket.session.get('basket', {})
+
+    if pk in list(basket.keys()):
+        basket[pk] += quantity
+    else:
+        basket[pk] = quantity
+
+    return redirect(redirect_url)
