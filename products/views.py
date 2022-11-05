@@ -4,6 +4,9 @@ from django.db.models import Q
 
 # Create your views here.
 def productsView(request):
+    """
+        This view loads the products pages
+    """
 
     category = None
     products = Product.objects.all()
@@ -22,6 +25,9 @@ def productsView(request):
     return render(request, 'products/products.html', context)
 
 def productInfoView(request, pk):
+    """
+        This view loads the individual product page
+    """
 
     product = get_object_or_404(Product, pk=pk)
 
