@@ -1,5 +1,5 @@
-from django import Decimal
-from django.compf import settings
+from decimal import Decimal
+from django.conf import settings
 
 def current_basket(request):
 
