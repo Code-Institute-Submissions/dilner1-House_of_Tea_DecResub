@@ -6,15 +6,51 @@
 <hr class="divider bg-dark">
 
 
-</div>
-{% if basket_items %}
+<div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col" class="border-0 bg-light">
+            <div class="p-2 px-3 text-uppercase">Product</div>
+          </th>
+          <th scope="col" class="border-0 bg-light">
+            <div class="py-2 text-uppercase">Price</div>
+          </th>
+          <th scope="col" class="border-0 bg-light">
+            <div class="py-2 text-uppercase">Quantity</div>
+          </th>
+          <th scope="col" class="border-0 bg-light">
+            <div class="py-2 text-uppercase">Remove</div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row" class="border-0">
+            <div class="p-2">
+              <img src="" alt="" width="70" class="img-fluid rounded shadow-sm">
+              <div class="ml-3 d-inline-block align-middle">
+                <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">{{ product.name }}</a></h5>
+              </div>
+            </div>
+          </th>
+          <td class="border-0 align-middle"><strong>£</strong></td>
+          <td class="border-0 align-middle"><strong>Quantity</strong></td>
+          <td class="border-0 align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
-{% else %}
-<div class="container">
-    <h3 class="text-center">There are no items in your basket</h3>
-    <a class="title" href="{% url 'products' %}">Continue Shopping</a>
 </div>
-{% endif %}
+<!-- {% if basket_items %} -->
+    
+<!-- {% else %}
+<div class="container text-center">
+    <h3>There are no items in your basket</h3>
+    <a class="title " href="{% url 'products' %}">Continue Shopping</a>
+</div>
+{% endif %} -->
 <!-- {% for item in items %} -->
 
 <!-- {% endfor %} -->
