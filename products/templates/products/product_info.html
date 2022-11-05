@@ -4,13 +4,8 @@
 {% block content %}
 <h1 class="title">Products</h1>
 
-{% for product in products %}
   <div class="card">
-
-    <a href="{% url 'product_info' product.id %}">
-        <img class="card-img-top" src="{{ product.image.url }}" alt="Card image cap">
-    </a>
-
+    <img class="card-img-top" src="{{ product.image.url }}" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">{{ product.name }}</h5>
       <p class="card-text">{{ product.info }}</p>
@@ -19,6 +14,5 @@
       <p class="d-inline pl-5">£ {{ product.price|floatformat:2 }} </p>
     </div>
   </div>
-{% endfor %}
 
 {% endblock %}
