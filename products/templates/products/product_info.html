@@ -2,16 +2,16 @@
 {% load static %}
 
 {% block content %}
-<h1 class="title">{{ product.name }}</h1>
-
-  <div class="container col-lg-5">
+<div class="d-flex">
+  <div class="pr-1">
     <img class="card-img-top" src="{{ product.image.url }}" alt="Card image cap">
-    <div class="card-body">
-      <p class="card-text">{{ product.info }}</p>
-      <P>Category: {{ product.category }}</P>
-      <button class="btn btn-info">Add to Basket</button>
-      <p class="d-inline pl-5">£ {{ product.price|floatformat:2 }} </p>
-    </div>
   </div>
-
+  <div class="container col-6">
+    <h5 class="card-title fs-1 text-center">{{ product.name }}</h5>
+    <P>Category: {{ product.category }}</P>
+    <p>{{ product.info }}</p>
+    <button class="btn btn-info">Add to Basket</button>
+    <p class="d-inline pl-5">£ {{ product.price|floatformat:2 }} </p>
+  </div>
+</div>
 {% endblock %}

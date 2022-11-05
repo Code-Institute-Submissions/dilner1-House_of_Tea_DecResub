@@ -47,5 +47,5 @@ body {
 .card-text {
   height: 4rem;
   overflow-x:hidden;
-  white-space: nowrap;
+  white-space: wrap;
 }
