@@ -12,8 +12,8 @@ def productsView(request):
     if request.GET:
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
-            products = products.filter(category__name__in=cateroies)
-            categories = Categories.objects.filter(name__in=categories)
+            products = products.filter(category__category__in=categories)
+            categories = Categories.objects.filter(category__in=categories)
 
 
 
