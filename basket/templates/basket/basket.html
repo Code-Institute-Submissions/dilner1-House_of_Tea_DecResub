@@ -3,4 +3,20 @@
 
 {% block content %}
 <h1 class="title">Basket</h1>
+<hr class="divider bg-dark">
+
+
+</div>
+{% if basket_items %}
+
+{% else %}
+<div class="container">
+    <h3 class="text-center">There are no items in your basket</h3>
+    <a class="title" href="{% url 'products' %}">Continue Shopping</a>
+</div>
+{% endif %}
+<!-- {% for item in items %} -->
+
+<!-- {% endfor %} -->
+</div>
 {% endblock %}

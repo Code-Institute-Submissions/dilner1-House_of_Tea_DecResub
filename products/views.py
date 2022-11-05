@@ -8,7 +8,7 @@ def productsView(request):
         This view loads the products pages
     """
 
-    category = None
+    categories = None
     products = Product.objects.all()
 
     if request.GET:

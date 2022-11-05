@@ -4,27 +4,27 @@
 {% block content %}
 
 {% for category in categories %}
-  <a class="text-decoration-none" href="{% url 'products' %}?category={{ category.category }}">
-    <h1 class="title">Our {{ category.category }}</h1>
-    <hr class="divider bg-dark">
-  </a>
+<a class="text-decoration-none" href="{% url 'products' %}?category={{ category.category }}">
+  <h1 class="title">Our {{ category.category }}</h1>
+  <hr class="divider bg-dark">
+</a>
 {% endfor %}
 
 {% for product in products %}
-  <div class="card">
+<div class="card">
 
-    <a href="{% url 'product_info' product.id %}">
-        <img class="card-img-top" src="{{ product.image.url }}" alt="Card image cap">
-    </a>
+  <a href="{% url 'product_info' product.id %}">
+    <img class="card-img-top" src="{{ product.image.url }}" alt="Card image cap">
+  </a>
 
-    <div class="card-body">
-      <h5 class="card-title">{{ product.name }}</h5>
-      <p class="card-text">{{ product.info }}</p>
-      <P>Category: {{ product.category }}</P>
-      <button class="btn btn-info">Add to Basket</button>
-      <p class="d-inline pl-5">£ {{ product.price|floatformat:2 }} </p>
-    </div>
+  <div class="card-body">
+    <h5 class="card-title">{{ product.name }}</h5>
+    <p class="card-text">{{ product.info }}</p>
+    <P>Category: {{ product.category }}</P>
+    <button class="btn btn-info">Add to Basket</button>
+    <p class="d-inline pl-5">£ {{ product.price|floatformat:2 }} </p>
   </div>
+</div>
 {% endfor %}
 
 {% endblock %}

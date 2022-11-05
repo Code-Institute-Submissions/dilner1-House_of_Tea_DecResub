@@ -64,6 +64,8 @@
             Products
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{% url 'products' %}">All Products</a>
+            <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="{% url 'products' %}?category=Tea">Tea</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="{% url 'products' %}?category=Pots and Sets">Teapots, Sets and Cups</a>
@@ -85,7 +87,7 @@
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link basket-icon" href="/"><i class="fas fa-shopping-basket"></i></a>
+          <a class="nav-link basket-icon" href="{% url 'basket' %}"><i class="fas fa-shopping-basket"></i></a>
         </li>
       </ul>
     </div>
