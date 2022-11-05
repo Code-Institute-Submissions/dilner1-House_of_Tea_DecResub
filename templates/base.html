@@ -57,11 +57,11 @@
                 Products
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="{% url 'products' %}">Tea</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=Tea">Tea</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="{% url 'products' %}">Teapots, Sets and Cups</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=Pots and Sets">Teapots, Sets and Cups</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="{% url 'products' %}">Teaware</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=Teaware">Teaware</a>
               </div>
             </li>
             <li class="nav-item dropdown">
