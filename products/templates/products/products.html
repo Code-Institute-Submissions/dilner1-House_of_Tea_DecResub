@@ -2,7 +2,12 @@
 {% load static %}
 
 {% block content %}
-<h1 class="title">Products</h1>
+
+{% for category in categories %}
+  <a class="text-decoration-none" href="{% url 'products' %}?category={{ category.category }}">
+    <h1 class="title">Our {{ category.category }}</h1>
+  </a>
+{% endfor %}
 
 {% for product in products %}
   <div class="card">

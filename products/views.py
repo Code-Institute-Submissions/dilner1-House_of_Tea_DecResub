@@ -5,7 +5,6 @@ from django.db.models import Q
 # Create your views here.
 def productsView(request):
 
-    query = None
     category = None
     products = Product.objects.all()
 
@@ -14,8 +13,6 @@ def productsView(request):
             categories = request.GET['category'].split(',')
             products = products.filter(category__category__in=categories)
             categories = Categories.objects.filter(category__in=categories)
-
-
 
     context = {
         'products': products,
