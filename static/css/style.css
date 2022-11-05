@@ -7,16 +7,17 @@ body {
     width: 100%;
 }
 
+.title {
+  font-family: 'Libre Baskerville', 'Times New Roman', Times, serif;
+  text-align: center;
+  padding-top: 2rem;
+  color: rgb(50, 50, 50);
+}
+
+/* Navbar styling */
 .logo {
   font-family: 'Kolker Brush';
   font-size: 2rem;
-}
-
-.title {
-    font-family: 'Libre Baskerville', 'Times New Roman', Times, serif;
-    text-align: center;
-    padding-top: 2rem;
-    color: rgb(50, 50, 50);
 }
 
 .basket-icon > i {
@@ -43,8 +44,6 @@ body {
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background: linear-gradient(to right, rgba(182, 196, 141, 1), rgba(214, 221, 190, 1))
 }
-
-
 
 /* Products Page */
 
