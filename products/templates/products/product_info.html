@@ -2,12 +2,11 @@
 {% load static %}
 
 {% block content %}
-<h1 class="title">Products</h1>
+<h1 class="title">{{ product.name }}</h1>
 
-  <div class="card">
+  <div class="container col-lg-5">
     <img class="card-img-top" src="{{ product.image.url }}" alt="Card image cap">
     <div class="card-body">
-      <h5 class="card-title">{{ product.name }}</h5>
       <p class="card-text">{{ product.info }}</p>
       <P>Category: {{ product.category }}</P>
       <button class="btn btn-info">Add to Basket</button>
