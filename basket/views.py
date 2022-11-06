@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # Create your views here.
 def basketView(request):
@@ -13,7 +13,7 @@ def addToBasketView(request, pk):
     """
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
-    basket.session.get('basket', {})
+    basket = request.session.get('basket', {})
 
     if pk in list(basket.keys()):
         basket[pk] += quantity
@@ -21,4 +21,5 @@ def addToBasketView(request, pk):
         basket[pk] = quantity
 
     request.session['basket'] = basket
+    
     return redirect(redirect_url)
