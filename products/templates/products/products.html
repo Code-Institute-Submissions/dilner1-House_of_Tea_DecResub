@@ -21,8 +21,19 @@
     <h5 class="card-title">{{ product.name }}</h5>
     <p class="card-text">{{ product.info }}</p>
     <P>Category: {{ product.category }}</P>
-    <button class="btn btn-info">Add to Basket</button>
-    <p class="d-inline pl-5">£ {{ product.price|floatformat:2 }} </p>
+    <p>£ {{ product.price|floatformat:2 }} </p>
+   <form action="" method="POST">
+    {% csrf_token %}
+    <div class="mb-3">
+      <p class="d-inline">Quantity:</p>
+    <input class="col-2" type="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99" id="id_qty_{{ product.id }}">
+    </div>
+    <input class="btn btn-info d-block" type="submit" value="Add to Basket">
+    
+
+    <input class="btn btn-info" type="hidden" name="redirect_url" value="{{ request.path }}">
+
+   </form>
   </div>
 </div>
 {% endfor %}
