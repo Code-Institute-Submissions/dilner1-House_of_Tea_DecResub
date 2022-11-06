@@ -1,11 +1,25 @@
 from decimal import Decimal
 from django.conf import settings
+from django.shortcuts import get_object_or_404
+from products.models import Product
 
 def current_basket(request):
 
     basket_items = []
     total = 0 
     quantity = 0
+    basket = request.session.get('basket', {})
+
+    for pk, quantity in basket.items():
+        product = get_object_or_404(Product, pk=pk)
+        total += quantity * product.price
+        quantity += quantity
+        basket_items.append({
+            'pk': pk,
+            'total': total,
+            'product': product,
+        })
+
 
     if total < settings.DELIVERY_CHARGE_MAX:
         delivery = total * Decimal(settings.DELIVERY_CHARGE/100)
@@ -18,7 +32,7 @@ def current_basket(request):
     grand_total = delivery + total
 
     context = {
-        'asket_items': basket_items,
+        'basket_items': basket_items,
         'total': total,
         'quantity': quantity,
         'delivery_threshold': delivery_threshold,
