@@ -21,5 +21,5 @@ def addToBasketView(request, pk):
         basket[pk] = quantity
 
     request.session['basket'] = basket
-    
+    print(request.session['basket'])
     return redirect(redirect_url)
