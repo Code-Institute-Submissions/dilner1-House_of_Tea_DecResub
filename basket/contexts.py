@@ -13,11 +13,13 @@ def current_basket(request):
     for pk, quantity in basket.items():
         product = get_object_or_404(Product, pk=pk)
         total += quantity * product.price
+        name = product.name
         quantity += quantity
         basket_items.append({
             'pk': pk,
             'total': total,
             'product': product,
+            'quantity': quantity,
         })
 
 
