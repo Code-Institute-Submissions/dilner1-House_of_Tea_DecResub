@@ -24,7 +24,7 @@ def current_basket(request):
 
 
     if total < settings.DELIVERY_CHARGE_MAX:
-        delivery = total * Decimal(settings.DELIVERY_CHARGE/100)
+        delivery = total * (settings.DELIVERY_CHARGE/100)
         delivery_threshold = settings.DELIVERY_CHARGE_MAX - total
 
     else:

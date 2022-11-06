@@ -87,7 +87,9 @@
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link basket-icon" href="{% url 'basket' %}"><i class="fas fa-shopping-basket"></i></a>
+          <div>
+            <a class="nav-link basket-icon" href="{% url 'basket' %}"><i class="fas fa-shopping-basket"></i>£{{grand_total|floatformat:2}}</a>
+          </div>
         </li>
       </ul>
     </div>
