@@ -7,14 +7,14 @@ def current_basket(request):
 
     basket_items = []
     total = 0 
-    quantity = 0
+    product_quantity = 0
     basket = request.session.get('basket', {})
 
     for pk, quantity in basket.items():
         product = get_object_or_404(Product, pk=pk)
         total += quantity * product.price
         name = product.name
-        quantity += quantity
+        product_quantity += quantity
         basket_items.append({
             'pk': pk,
             'total': total,
@@ -24,8 +24,8 @@ def current_basket(request):
 
 
     if total < settings.DELIVERY_CHARGE_MAX:
-        delivery = total * (settings.DELIVERY_CHARGE/100)
-        delivery_threshold = settings.DELIVERY_CHARGE_MAX - total
+        delivery = total * settings.DELIVERY_CHARGE/100
+        delivery_threshold = settings.DELIVERY_CHARGE_MAX - delivery
 
     else:
         delivery = 30
@@ -36,7 +36,8 @@ def current_basket(request):
     context = {
         'basket_items': basket_items,
         'total': total,
-        'quantity': quantity,
+        'product_quantity': product_quantity,
+        'delivery': delivery,
         'delivery_threshold': delivery_threshold,
         'grand_total': grand_total,
         'delivery_charge': settings.DELIVERY_CHARGE,
