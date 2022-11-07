@@ -45,6 +45,19 @@ body {
     background: linear-gradient(to right, rgba(182, 196, 141, 1), rgba(214, 221, 190, 1))
 }
 
+/* Landing Page */
+.home-banner > img {
+  max-height: 500px;
+  background-position: center;
+  object-fit: cover;
+}
+
+.content-image {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+}
+
 /* Products Page */
 
 .card {

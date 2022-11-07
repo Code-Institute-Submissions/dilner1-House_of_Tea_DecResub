@@ -2,6 +2,37 @@
 {% load static %}
 
 {% block content %}
-<h1 class="title">Index Page</h1>
+<h1 class="title">Welcome to The House of Tea</h1>
 <hr class="divider bg-dark">
+
+<div class="container text-center">
+    <div class="row">
+      <div class="col-sm-4 home-banner content">
+        <div class="content-overlay"></div>
+        <img class="content-image "
+          src="../../../media/pexels-anna-pou-8329325.jpg" alt="Image">
+        <div class="content-details fadeIn-bottom">
+          <h3 class="content-title"><a href="{% url 'products' %}?category=Tea">Tea</a></h3>
+        </div>
+      </div>
+  
+      <div class="col-sm-4 home-banner content">
+        <div class="content-overlay"></div>
+        <img class="content-image"
+          src="../../../media/pexels-tima-miroshnichenko-6545437_bx0mey.jpg" alt="Image">
+        <div class="content-details fadeIn-bottom">
+          <h3 class="content-title"><a href="{% url 'products' %}?category=Pots and Sets">Pots and Sets</a></h3>
+        </div>
+      </div>
+  
+      <div class="col-sm-4 home-banner content">
+        <div class="content-overlay"></div>
+        <img class="content-image"
+          src="../../../media/pexels-cup-of-couple-8474055.jpg" alt="Image">          
+        <div class="content-details fadeIn-bottom">
+          <h3 class="content-title"><a href="{% url 'products' %}?category=Teaware">Teaware</a></h3>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock %}
