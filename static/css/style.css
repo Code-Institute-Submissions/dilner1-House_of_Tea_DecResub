@@ -56,6 +56,8 @@ body {
   width: 350px;
   height: 350px;
   border-radius: 50%;
+  background-position: center;
+  object-fit: cover;
 }
 
 .content-title {
