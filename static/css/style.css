@@ -58,6 +58,14 @@ body {
   border-radius: 50%;
 }
 
+.content-title {
+  color: rgb(50, 50, 50);
+}
+
+.content-title:hover {
+  color: rgb(188, 108, 38);
+}
+
 /* Products Page */
 
 .card {
