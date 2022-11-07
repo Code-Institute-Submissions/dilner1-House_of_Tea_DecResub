@@ -80,3 +80,9 @@ body {
   overflow-x:hidden;
   white-space: wrap;
 }
+
+/* Basket Page */
+
+.basket-text {
+  width: 200px;
+}

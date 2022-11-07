@@ -48,7 +48,7 @@
 
 <body>
   <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light gradient">
-    <a class="navbar-brand logo" href="{% url 'home' %}">House of Tea</a>
+    <a class="navbar-brand logo align-middle" href="{% url 'home' %}">House of Tea</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -88,7 +88,7 @@
         </li>
         <li class="nav-item">
           <div>
-            <a class="nav-link basket-icon" href="{% url 'basket' %}"><i class="fas fa-shopping-basket"></i>£{{grand_total|floatformat:2}}</a>
+            <a class="nav-link basket-icon align-middle" href="{% url 'basket' %}"><i class="fas fa-shopping-basket"></i>£{{grand_total|floatformat:2}}</a>
           </div>
         </li>
       </ul>
