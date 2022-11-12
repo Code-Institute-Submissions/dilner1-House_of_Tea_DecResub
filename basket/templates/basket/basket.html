@@ -7,8 +7,6 @@
 
 </div>
 {% if basket_items %}
-    {{ basket_items }}
-    {{ request.session.basket }}
     <div class="text-center pb-3">
         <div class="text-uppercase">Delivery Charge: £{{delivery}} | Total: £{{grand_total}}</div>
     </div>
@@ -43,7 +41,11 @@
                         </div>
                     </th>
                     <td class="border-0 align-middle"><strong>£{{ product.total }}</strong></td>
+                    {% if product.weight %}
+                    <td class="border-0 align-middle"><strong>{{ product.quantity.item_weight }}</strong></td>
+                    {% else %}
                     <td class="border-0 align-middle"><strong>{{ product.quantity }}</strong></td>
+                    {% endif %}
                     <td class="border-0 align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a></td>
                 </tr>
             </tbody>
