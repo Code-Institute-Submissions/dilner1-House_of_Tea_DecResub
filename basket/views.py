@@ -14,22 +14,24 @@ def addToBasketView(request, pk):
     """
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
-    basket = request.session.get('basket', {})
     weight = None
-    if weight in request.POST:
-        weight = request.POST['weight']
-    if size:
+
+    if 'product_weight' in request.POST:
+        weight = request.POST['product_weight']
+    basket = request.session.get('basket', {})
+    if weight:
         if pk in list(basket.keys()):
-            if size in basket[pk]['item_weight'].keys(): 
+            if weight in basket[pk]['item_weight'].keys(): 
                 basket[pk]['item_weight'][weight] += quantity
             else:
                 basket[pk]['item_weight'][weight] = quantity
         else:
             basket[pk] = {'item_weight': {weight: quantity}}
-            if pk in list(basket.keys()):
-                basket[pk] += quantity
-            else:
-                basket[pk] = quantity
+    else:
+        if pk in list(basket.keys()):
+            basket[pk] += quantity
+        else:
+            basket[pk] = quantity
 
     request.session['basket'] = basket
     print(request.session['basket'])
