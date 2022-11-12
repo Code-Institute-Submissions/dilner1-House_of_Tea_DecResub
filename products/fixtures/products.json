@@ -9,7 +9,8 @@
             "info": "A very fragrant tea from Hunan province, the local people have been growing this jsamine tea for generations. This is perfect for relaxing in the afternoon with it's subtle flavours and lower caffeine content。", 
             "category": "1",
             "image_url": "https://res.cloudinary.com/ddxxrzq7g/image/upload/v1656373209/pexels-valeria-boltneva-11213970_yjrcxv.jpg",
-            "image": "pexels-valeria-boltneva-11213970.jpg"
+            "image": "pexels-valeria-boltneva-11213970.jpg",
+            "weight": "True"
     }},
     {
         "model": "products.product",
