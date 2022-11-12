@@ -10,18 +10,30 @@ def current_basket(request):
     product_quantity = 0
     basket = request.session.get('basket', {})
 
-    for pk, quantity in basket.items():
-        product = get_object_or_404(Product, pk=pk)
-        total += quantity * product.price
-        name = product.name
-        product_quantity += quantity
-        basket_items.append({
-            'pk': pk,
-            'total': total,
-            'product': product,
-            'quantity': quantity,
-        })
-
+    for pk, product_data in basket.items():
+        if isinstance(product_data, int):
+            product = get_object_or_404(Product, pk=pk)
+            total += product_data * product.price
+            name = product.name
+            product_quantity += product_data
+            basket_items.append({
+                'pk': pk,
+                'total': total,
+                'product': product,
+                'quantity': product_data,
+            })
+        else:
+            for weight, quantity, in product_data['item_weight'].items():
+                product = get_object_or_404(Product, pk=pk)
+                total += quantity * product.price
+                product_quantity += quantity
+                basket_items.append({
+                    'pk': pk,
+                    'total': total,
+                    'product': product,
+                    'quantity': product_data,
+                    'weight': weight,
+                })
 
     if total < settings.DELIVERY_CHARGE_MAX:
         delivery = total * settings.DELIVERY_CHARGE/100
