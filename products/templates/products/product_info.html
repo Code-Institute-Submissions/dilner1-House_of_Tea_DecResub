@@ -11,31 +11,32 @@
     <p>{{ product.info }}</p>
     <P>Category: {{ product.category }}</P>
     <p>£ {{ product.price|floatformat:2 }} </p>
-   <form action="{% url 'add_to_basket' product.pk %}" method="POST">
-    {% csrf_token %}
+    <form action="{% url 'add_to_basket' product.pk %}" method="POST">
+      {% csrf_token %}
       {% with product.weight as amount %}
         {% if amount %}
-          <div class="col-12">
-              <p><strong>Amount:</strong></p>
-              <select class="form-control rounded-0 w-50" name="product_weight" id='id_product_weight'>
-                  <option value="100g" selected>100 grams</option>
-                  <option value="250g">250 grams</option>
-                  <option value="500g">500 grams</option>
-                  <option value="1kg">1 Kilogram</option>
-              </select>
+          <div class="mb-4">
+            <p><strong>Weight:</strong></p>
+            <select class="col-lg-4 form-control qty_input" name="product_weight" id='id_product_weight'>
+              <option value="100g" selected>100 grams</option>
+              <option value="250g">250 grams</option>
+              <option value="500g">500 grams</option>
+              <option value="1kg">1 Kilogram</option>
+            </select>
           </div>
         {% endif %}
       {% endwith %}
-    <div class="mb-3">
-      <p class="d-inline">Quantity:</p>
-    <input class="col-2" type="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99" id="id_qty_{{ product.id }}">
-    </div>
-    <input class="btn btn-info d-block" type="submit" value="Add to Basket">
-    
-  
-    <input class="btn btn-info" type="hidden" name="redirect_url" value="{{ request.path }}">
-  
-   </form>
+      <div class="mb-3">
+        <p class="d-inline"><strong>Quantity:</strong></p>
+        <input class="col-lg-2 col-md-2 col-sm-2 col-xs-2" type="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99"
+          id="id_qty_{{ product.id }}">
+      </div>
+      <input class="btn btn-info d-block" type="submit" value="Add to Basket">
+
+
+      <input class="btn btn-info" type="hidden" name="redirect_url" value="{{ request.path }}">
+
+    </form>
   </div>
 </div>
 
