@@ -1,18 +1,32 @@
 <script type="text/javascript">
+
+    // not working
+    function preventCount(pk) {
+        var quantity = parseInt($(`#id_qty_${pk}`).val());
+        var preventDecrease = quantity < 2;
+        var preventIncrease = quantity > 98;
+        $(`#decrease_${pk}`).prop('disabled', preventDecrease);
+        $(`#increase_${pk}`).prop('disabled', preventIncrease);
+    }
+
    // Increase the item quantity in basket
    $('.increase').click(function(e) {
         e.preventDefault();
-        var input = $(this).closest('.input-group').find('.qty_input')[0];
-        var value = parseInt($(input).val());
-        $(input).val(value + 1);
+        var incrementInput = $(this).closest('.input-group').find('.qty_input')[0];
+        var quantity = parseInt($(incrementInput).val());
+        $(incrementInput).val(quantity + 1);
+        var pk = $(this).data('pk');
+        preventCount(pk)
     });
 
     // Decrease the item quantity in basket
     $('.decrease').click(function(e) {
         e.preventDefault();
-        var input = $(this).closest('.input-group').find('.qty_input')[0];
-        var value = parseInt($(input).val());
-        $(input).val(value - 1);
+        var incrementInput = $(this).closest('.input-group').find('.qty_input')[0];
+        var quantity = parseInt($(incrementInput).val());
+        $(incrementInput).val(quantity - 1);
+        var pk = $(this).data('pk');
+        preventCount(pk)
     });
     
 </script>
