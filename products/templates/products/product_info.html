@@ -26,10 +26,17 @@
           </div>
         {% endif %}
       {% endwith %}
-      <div class="mb-3">
+      <div class="mb-3 input-group">
         <p class="d-inline"><strong>Quantity:</strong></p>
-        <input class="col-lg-2 col-md-2 col-sm-2 col-xs-2" type="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99"
+        <div class="input-group-prepend">
+          <button data-item_id="increase" id="increase_{{product.pk}}"><i class="fas fa-plus"></i></button>
+        </div>
+        <input class="col-lg-2 col-md-2 col-sm-2 col-xs-2 input-group" type="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99"
           id="id_qty_{{ product.id }}">
+          <div class="input-group-append">
+            <button data-item_id="decrease" id="decrease_{{product.pk}}"><i class="fas fa-minus"></i></button>
+          </div>
+        <div class="input-group-append"></div>
       </div>
       <input class="btn btn-info d-block" type="submit" value="Add to Basket">
 
