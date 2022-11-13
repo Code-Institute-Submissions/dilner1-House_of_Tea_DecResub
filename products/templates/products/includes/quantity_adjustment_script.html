@@ -1,4 +1,18 @@
 <script type="text/javascript">
+   // Increase the item quantity in basket
+   $('.increase').click(function(e) {
+        e.preventDefault();
+        var input = $(this).closest('.input-group').find('.qty_input')[0];
+        var value = parseInt($(input).val());
+        $(input).val(value + 1);
+    });
 
+    // Decrease the item quantity in basket
+    $('.decrease').click(function(e) {
+        e.preventDefault();
+        var input = $(this).closest('.input-group').find('.qty_input')[0];
+        var value = parseInt($(input).val());
+        $(input).val(value - 1);
+    });
     
 </script>
