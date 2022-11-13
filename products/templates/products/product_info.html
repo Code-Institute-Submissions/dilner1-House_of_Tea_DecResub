@@ -14,37 +14,51 @@
     <form action="{% url 'add_to_basket' product.pk %}" method="POST">
       {% csrf_token %}
       {% with product.weight as amount %}
-        {% if amount %}
-          <div class="mb-4">
-            <p><strong>Weight:</strong></p>
-            <select class="col-lg-4 form-control qty_input" name="product_weight" id='id_product_weight'>
-              <option value="100g" selected>100 grams</option>
-              <option value="250g">250 grams</option>
-              <option value="500g">500 grams</option>
-              <option value="1kg">1 Kilogram</option>
-            </select>
-          </div>
-        {% endif %}
+      {% if amount %}
+      <div class="mb-4">
+        <p><strong>Weight:</strong></p>
+        <select class="col-lg-4 form-control qty_input" name="product_weight" id='id_product_weight'>
+          <option value="100g" selected>100 grams</option>
+          <option value="250g">250 grams</option>
+          <option value="500g">500 grams</option>
+          <option value="1kg">1 Kilogram</option>
+        </select>
+      </div>
+      {% endif %}
       {% endwith %}
-      <div class="mb-3 input-group">
-        <p class="d-inline"><strong>Quantity:</strong></p>
-        <div class="input-group-prepend">
-          <button data-item_id="increase" id="increase_{{product.pk}}"><i class="fas fa-plus"></i></button>
-        </div>
-        <input class="col-lg-2 col-md-2 col-sm-2 col-xs-2 input-group" type="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99"
-          id="id_qty_{{ product.id }}">
-          <div class="input-group-append">
-            <button data-item_id="decrease" id="decrease_{{product.pk}}"><i class="fas fa-minus"></i></button>
+      <!-- Quantity adjuster -->
+    <div class="mb-4">
+      <p><strong>Quantity:</strong></p>
+        <div class="form-group w-50">
+          <div class="input-group">
+              <div class="input-group-prepend">
+                  <button class="increase btn btn-black" 
+                      data-item_id="{{ product.pk }}" id="increase_{{ product.pk }}">
+                      <i class="fas fa-plus"></i>
+                  </button>
+              </div>
+              <input class="form-control qty_input col-lg-2 col-md-2 col-sm-2 col-xs-2" type="number"
+                  name="quantity" value="1" min="1" max="99"
+                  data-item_id="{{ product.pk }}"
+                  id="id_qty_{{ product.pk }}">
+              <div class="input-group-append">
+                  <button class="decrease btn btn-black"
+                      data-item_id="{{ product.pk }}" id="decrease_{{ product.id }}">
+                      <i class="fas fa-minus"></i>
+                  </button>
+              </div>
           </div>
-        <div class="input-group-append"></div>
       </div>
       <input class="btn btn-info d-block" type="submit" value="Add to Basket">
-
-
+  </div>
       <input class="btn btn-info" type="hidden" name="redirect_url" value="{{ request.path }}">
 
     </form>
   </div>
 </div>
 
+{% endblock %}
+{% block postloadjs %}
+{{ block.super }}
+{% include 'products/includes/quantity_adjuster_script.html' %}
 {% endblock %}
