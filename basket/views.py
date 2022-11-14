@@ -59,6 +59,5 @@ def updateBasketView(request, pk):
             basket.pop[pk]
 
     request.session['basket'] = basket
-    print(request.session['basket'])
-    return redirect(reverse('basketView'))
+    return redirect(reverse(basketView))
     

@@ -35,7 +35,7 @@
                         <div class="p-2">
                             <img src="{{ product.image }}" alt="" width="70" class="img-fluid rounded shadow-sm">
                             <div class="d-inline-block align-middle">
-                                <h5 class="mb-0"> <a href="#"
+                                <h5 class="mb-0"> <a href="{% url 'product_info' product.pk %}"
                                         class="basket-text text-dark text-decoration-none d-inline-block align-middle">{{ product.product.name }}</a></h5>
                                         {% if product.product.weight %}{{ product.weight|upper }}{% endif %}
                             </div>
@@ -98,7 +98,7 @@
 <script type="text/javascript">
     // Update item quantity
     $('.update-basket').click(function(e) {
-        var form = $(this).prev('.update_basket');
+        var form = $(this).prev('.amend-basket-form');
         form.submit();
     })
 
@@ -106,7 +106,7 @@
     $('.remove-product').click(function(e) {
         var csrfToken = "{{ csrf_token }}";
         var pk = $(this).attr('id').split('remove_')[1];
-        var size = $(this).data('size');
+        var size = $(this).data('weight');
         var url = `/basket/remove/${pk}`;
         var data = {'csrfmiddlewaretoken': csrfToken, 'weight': weight};
 
