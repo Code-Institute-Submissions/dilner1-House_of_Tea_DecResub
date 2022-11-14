@@ -43,9 +43,9 @@
                        <!-- How to get the exact amount for each weight? -->
                     <p>{{ product.quantity }}</p>
                     </th>
-                    <td class="border-0 align-middle"><strong>£{{ product.total }}</strong></td>
+                    <td class="border-0 align-middle"><strong>£{{ product.price }}</strong></td>
                     <td class="border-0 align-middle"><strong>
-                        <form action="{% url 'update_basket' product.product.pk %}" method="POST" class="form amend-basket-form">
+                        <form action="{% url 'update_basket' product.pk %}" method="POST" class="form amend-basket-form">
                             {% csrf_token %}
                             <div class="mb-4">
                                   <div class="form-group w-50">
@@ -70,8 +70,8 @@
                                 </div>
                               </div>
                         </form>
-                        <a class="update-basket text-info"><small>Update</small></a>
-                        <td class="border-0 align-middle"><a href="#" class="remove-product" id="remove_{{ item.item_id }}" data-size="{{ item.size }}"><i class="fa fa-trash"></i></a></td>
+                        <a class="update-basket"><small>Update</small></a>
+                        <td class="border-0 align-middle"><a href="#" class="remove-product" id="remove_{{ product.pk }}" data-size="{{ product.weight }}"><i class="fa fa-trash"></i></a></td>
                     </strong></td>
                 </tr>
             </tbody>

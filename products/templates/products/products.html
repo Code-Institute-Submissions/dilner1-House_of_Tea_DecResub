@@ -3,12 +3,17 @@
 
 {% block content %}
 
+{% if categories %}
 {% for category in categories %}
 <a class="text-decoration-none" href="{% url 'products' %}?category={{ category.category }}">
   <h1 class="title">Our {{ category.category }}</h1>
   <hr class="divider bg-dark">
 </a>
 {% endfor %}
+{% else %}
+<h1 class="title">Our Products</h1>
+<hr class="divider bg-dark">
+{% endif %}
 
 {% for product in products %}
 <div class="card">

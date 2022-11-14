@@ -34,6 +34,7 @@ def current_basket(request):
                     'product': product,
                     'quantity': product_data,
                     'weight': weight,
+                    'price': product.price * quantity,
                 })
 
     if total < settings.DELIVERY_CHARGE_MAX:
