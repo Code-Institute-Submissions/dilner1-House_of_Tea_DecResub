@@ -41,9 +41,13 @@
                             </div>
                         </div>
                        <!-- How to get the exact amount for each weight? -->
-                    <p>{{ product.quantity }}</p>
+                    <p>{{ product.weight_quantity }}</p>
                     </th>
+                    {% if product.product.weight %}
                     <td class="border-0 align-middle"><strong>£{{ product.price }}</strong></td>
+                    {% else %}
+                    <td class="border-0 align-middle"><strong>£{{ product.price }}</strong></td>
+                    {% endif %}
                     <td class="border-0 align-middle"><strong>
                         <form action="{% url 'update_basket' product.pk %}" method="POST" class="form amend-basket-form">
                             {% csrf_token %}

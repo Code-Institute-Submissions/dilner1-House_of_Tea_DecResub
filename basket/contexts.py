@@ -21,6 +21,7 @@ def current_basket(request):
                 'total': total,
                 'product': product,
                 'quantity': product_data,
+                'price': product.price * quantity,
             })
         else:
             product = get_object_or_404(Product, pk=pk)
@@ -28,6 +29,7 @@ def current_basket(request):
                 product = get_object_or_404(Product, pk=pk)
                 total += quantity * product.price
                 product_quantity += quantity
+                weight_quantity = product_data['item_weight']
                 basket_items.append({
                     'pk': pk,
                     'total': total,
@@ -35,6 +37,7 @@ def current_basket(request):
                     'quantity': product_data,
                     'weight': weight,
                     'price': product.price * quantity,
+                    'weight_quantity': weight_quantity,
                 })
 
     if total < settings.DELIVERY_CHARGE_MAX:
