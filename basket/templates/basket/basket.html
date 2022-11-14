@@ -37,15 +37,15 @@
                             <div class="d-inline-block align-middle">
                                 <h5 class="mb-0"> <a href="#"
                                         class="basket-text text-dark text-decoration-none d-inline-block align-middle">{{ product.product.name }}</a></h5>
-                                        {% if product.weight %}
-                                        <strong>{{ product.quantity.item_weight }}</strong>
-                                        {% endif %}
+                                        {% if product.product.weight %}{{ product.weight|upper }}{% endif %}
                             </div>
                         </div>
+                       <!-- How to get the exact amount for each weight? -->
+                    <p>{{ product.quantity }}</p>
                     </th>
                     <td class="border-0 align-middle"><strong>£{{ product.total }}</strong></td>
                     <td class="border-0 align-middle"><strong>
-                        <form action="" method="POST" class="form amend-basket-form">
+                        <form action="{% url 'update_basket' product.product.pk %}" method="POST" class="form amend-basket-form">
                             {% csrf_token %}
                             <div class="mb-4">
                                   <div class="form-group w-50">
@@ -57,7 +57,7 @@
                                             </button>
                                         </div>
                                         <input class="form-control qty_input col-lg-4 col-md-4 col-sm-4 col-xs-4" type="number"
-                                            name="quantity" value="{{product.quantity}}" min="1" max="99"
+                                            name="quantity" value="{% if product.product.weight %}{{ product.weight }}{% else %}{{ product.quantity }}{% endif %}" min="1" max="99"
                                             data-item_id="{{ product.pk }}"
                                             id="id_qty_{{ product.pk }}">
                                         <div class="input-group-append">
@@ -70,8 +70,9 @@
                                 </div>
                               </div>
                         </form>
+                        <a class="update-basket text-info"><small>Update</small></a>
+                        <td class="border-0 align-middle"><a href="#" class="remove-product" id="remove_{{ item.item_id }}" data-size="{{ item.size }}"><i class="fa fa-trash"></i></a></td>
                     </strong></td>
-                    <td class="border-0 align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a></td>
                 </tr>
             </tbody>
         </table>
@@ -82,6 +83,33 @@
     <h3>There are no items in your basket</h3>
     <a class="title " href="{% url 'products' %}">Continue Shopping</a>
 </div>
+
 {% endif %}
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+{% include 'products/includes/quantity_adjuster_script.html' %}
+<script type="text/javascript">
+    // Update item quantity
+    $('.update-basket').click(function(e) {
+        var form = $(this).prev('.update_basket');
+        form.submit();
+    })
+
+    // Remove item from basket
+    $('.remove-product').click(function(e) {
+        var csrfToken = "{{ csrf_token }}";
+        var pk = $(this).attr('id').split('remove_')[1];
+        var size = $(this).data('size');
+        var url = `/basket/remove/${pk}`;
+        var data = {'csrfmiddlewaretoken': csrfToken, 'weight': weight};
+
+        $.post(url, data)
+         .done(function() {
+             location.reload();
+         });
+    })
+</script>
 {% endblock %}

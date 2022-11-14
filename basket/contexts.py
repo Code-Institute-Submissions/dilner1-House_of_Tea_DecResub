@@ -23,6 +23,7 @@ def current_basket(request):
                 'quantity': product_data,
             })
         else:
+            product = get_object_or_404(Product, pk=pk)
             for weight, quantity, in product_data['item_weight'].items():
                 product = get_object_or_404(Product, pk=pk)
                 total += quantity * product.price
