@@ -8,7 +8,6 @@ def basketView(request):
     """
     return render(request, 'basket/basket.html')
 
-
 def addToBasketView(request, pk):
     """
         This view adds an item to the basket
@@ -22,7 +21,7 @@ def addToBasketView(request, pk):
     basket = request.session.get('basket', {})
     if weight:
         if pk in list(basket.keys()):
-            if weight in basket[pk]['item_weight'].keys(): 
+            if weight in basket[pk]['item_weight'].keys():
                 basket[pk]['item_weight'][weight] += quantity
             else:
                 basket[pk]['item_weight'][weight] = quantity
@@ -38,10 +37,9 @@ def addToBasketView(request, pk):
     print(request.session['basket'])
     return redirect(redirect_url)
 
-
 def updateBasketView(request, pk):
     """
-        This view updates the quantity of an item in the basket
+        This view adds an item to the basket
     """
     quantity = int(request.POST.get('quantity'))
     weight = None
@@ -51,11 +49,9 @@ def updateBasketView(request, pk):
     basket = request.session.get('basket', {})
     if weight:
         if quantity > 0:
-            basket[pk]['product_weight'][weight] = quantity
+            basket[pk][product_weight][weight] = quantity
         else:
-            del basket[pk]['product_weight'][weight]
-            if not basket[pk]['product_weight']:
-                basket.pop(pk)
+            del basket[pk][product_weight][weight]
     else:
         if quantity > 0:
             basket[pk] = quantity
@@ -63,9 +59,9 @@ def updateBasketView(request, pk):
             basket.pop(pk)
 
     request.session['basket'] = basket
-    return redirect(reverse(basketView))
-
-
+    print(request.session['basket'])
+    return redirect(reverse('basketView'))
+    
 def removeFromBasketView(request, pk):
     """
         This view removes an item from the basket
@@ -75,7 +71,7 @@ def removeFromBasketView(request, pk):
         weight = None
 
         if 'product_weight' in request.POST:
-            weight = request.POST['product_weight']
+            weight = request.POST['weight']
         basket = request.session.get('basket', {})
         if weight:
             del basket[pk]['product_weight'][weight]
