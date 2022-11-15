@@ -75,7 +75,7 @@
                               </div>
                         </form>
                         <a class="update-basket"><small>Update</small></a>
-                        <td class="border-0 align-middle"><a href="#" class="remove-product" id="remove_{{ product.pk }}" data-size="{{ product.weight }}"><i class="fa fa-trash"></i></a></td>
+                        <td class="border-0 align-middle"><a class="remove-product" id="remove_{{ product.pk }}" data-size="{{ product.weight }}"><i class="fa fa-trash"></i></a></td>
                     </strong></td>
                 </tr>
             </tbody>
@@ -106,10 +106,10 @@
     $('.remove-product').click(function(e) {
         var csrfToken = "{{ csrf_token }}";
         var pk = $(this).attr('id').split('remove_')[1];
-        var size = $(this).data('weight');
+        var weight = $(this).data('weight');
         var url = `/basket/remove/${pk}`;
         var data = {'csrfmiddlewaretoken': csrfToken, 'weight': weight};
-
+        
         $.post(url, data)
          .done(function() {
              location.reload();

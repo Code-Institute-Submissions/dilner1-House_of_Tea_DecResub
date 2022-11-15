@@ -21,7 +21,7 @@ def current_basket(request):
                 'total': total,
                 'product': product,
                 'quantity': product_data,
-                'price': product.price * quantity,
+                'price': product.price * product_data,
             })
         else:
             product = get_object_or_404(Product, pk=pk)
