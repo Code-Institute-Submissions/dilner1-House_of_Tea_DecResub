@@ -102,7 +102,7 @@
         form.submit();
     })
 
-    // Remove item from basket
+    // Remove item from basket NOT WORKING
     $('.remove-product').click(function(e) {
         var csrfToken = "{{ csrf_token }}";
         var pk = $(this).attr('id').split('remove_')[1];

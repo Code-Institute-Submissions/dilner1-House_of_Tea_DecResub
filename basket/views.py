@@ -8,6 +8,7 @@ def basketView(request):
     """
     return render(request, 'basket/basket.html')
 
+
 def addToBasketView(request, pk):
     """
         This view adds an item to the basket
@@ -37,6 +38,7 @@ def addToBasketView(request, pk):
     print(request.session['basket'])
     return redirect(redirect_url)
 
+
 def updateBasketView(request, pk):
     """
         This view updates the quantity of an item in the basket
@@ -63,11 +65,12 @@ def updateBasketView(request, pk):
     request.session['basket'] = basket
     return redirect(reverse(basketView))
 
+
 def removeFromBasketView(request, pk):
     """
         This view removes an item from the basket
     """
-    print('hi')
+
     try:
         weight = None
 
@@ -76,7 +79,7 @@ def removeFromBasketView(request, pk):
         basket = request.session.get('basket', {})
         if weight:
             del basket[pk]['product_weight'][weight]
-            if not basket[pk]['']:
+            if not basket[pk]['product_weight']:
                 basket.pop(pk)
         else:
             basket.pop(pk)
@@ -85,4 +88,3 @@ def removeFromBasketView(request, pk):
         return HttpResponse(status=200)
     except Exception as e:
         return HttpResponse(status=500)
-    
