@@ -49,10 +49,10 @@ def updateBasketView(request, pk):
     basket = request.session.get('basket', {})
     if weight:
         if quantity > 0:
-            basket[pk][product_weight][weight] = quantity
+            basket[pk]['product_weight'][weight] = quantity
         else:
-            del basket[pk][product_weight][weight]
-            if not basket[pk][product_weight]:
+            del basket[pk]['product_weight'][weight]
+            if not basket[pk]['product_weight']:
                 basket.pop(pk)
     else:
         if quantity > 0:
@@ -67,6 +67,7 @@ def removeFromBasketView(request, pk):
     """
         This view removes an item from the basket
     """
+    print('hi')
     try:
         weight = None
 
@@ -74,8 +75,8 @@ def removeFromBasketView(request, pk):
             weight = request.POST['product_weight']
         basket = request.session.get('basket', {})
         if weight:
-            del basket[pk][product_weight][weight]
-            if not basket[pk][product_weight]:
+            del basket[pk]['product_weight'][weight]
+            if not basket[pk]['']:
                 basket.pop(pk)
         else:
             basket.pop(pk)
