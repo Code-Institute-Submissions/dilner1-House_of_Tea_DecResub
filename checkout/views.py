@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.contrib import messages
 
 from .models import Order
-from .forms import OrderForm
+from .forms import orderForm
 
 def checkoutView(request):
     """
@@ -13,9 +13,9 @@ def checkoutView(request):
         messages.error(request, 'Oops, looks like there is nothing in your basket yet.')
         return redirect(reverse('products'))
 
-    order_form = OrderForm()
+    order_form = orderForm()
     template = 'checkout/checkout.html'
-    comtext = {
+    context = {
         'order_form': order_form,
     }
 

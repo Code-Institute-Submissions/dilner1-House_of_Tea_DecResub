@@ -1,2 +1,37 @@
 {% extends "base.html" %}
 {% load static %}
+
+{% block content %}
+<h1 class="title">Checkout</h1>
+<hr class="divider bg-dark">
+
+</div>
+ 
+</div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+{% include 'products/includes/quantity_adjuster_script.html' %}
+<script type="text/javascript">
+    // Update item quantity
+    $('.update-basket').click(function(e) {
+        var form = $(this).prev('.amend-basket-form');
+        form.submit();
+    })
+
+    // Remove item from basket NOT WORKING
+    $('.remove-product').click(function(e) {
+        var csrfToken = "{{ csrf_token }}";
+        var pk = $(this).attr('id').split('remove_')[1];
+        var weight = $(this).data('weight');
+        var url = `/basket/remove/${pk}`;
+        var data = {'csrfmiddlewaretoken': csrfToken, 'weight': weight};
+        
+        $.post(url, data)
+         .done(function() {
+             location.reload();
+         });
+    })
+</script>
+{% endblock %}
