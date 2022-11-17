@@ -60,7 +60,7 @@ def updateBasketView(request, pk):
 
     request.session['basket'] = basket
     print(request.session['basket'])
-    return redirect(reverse('basketView'))
+    return redirect(reverse(basketView))
     
 def removeFromBasketView(request, pk):
     """
