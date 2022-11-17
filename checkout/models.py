@@ -18,6 +18,30 @@ class Order(models.Model):
     order_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
     grand_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
 
+    def _create_order_id(self):
+
+        return uuid.uuid4().hex.upper()
+
+    def update_order_total(self):
+        self.order_total = self.lineitems.aggregate(Sum('lineitem_total', 'lineitem_total_sum'))
+        if self.order_total < settings.DELIVERY_CHARGE_MAX:
+            self.delviery_charge = self.order_total * settings.DELIVERY_CHARGE / 50
+        else: 
+            self.delviery_charge = 30
+            self.grand_total = order_total + delivery_charge
+            self.save()
+
+    def save(self, *args, **kwargs):
+        """
+            Function overides model save method
+        """
+        if not self.order_id:
+            self.order_id = self._create_order_id()
+        super().save(•args, ••kwargs)
+
+    def __str__(self):
+        return self.order_id
+
 class OrderLineItems(model.Models):
     order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems')
     product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)
@@ -25,3 +49,12 @@ class OrderLineItems(model.Models):
     quantity = models.IntegerField(null=False, blank=False, default=0)
     line_item_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blamk=False, editable=False)
 
+    def save(self, *args, **kwargs):
+        """
+            Function overides model save method
+        """
+        self.line_item_total = self.product * self.quantity
+        super().save(•args, ••kwargs)
+
+        def __str__(self):
+        return f'SKU {self.product.sku} on order {self.order.order_id}'
