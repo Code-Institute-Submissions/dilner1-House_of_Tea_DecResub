@@ -3,12 +3,12 @@ from django.dispatch import receiver
 
 from .models import OrderLineItems
 
-@receiver(post_save, OrderLineItems)
+@receiver(post_save, sender=OrderLineItems)
 def save_update_signal(sender, instance, created, **kwargs):
 
     instance.order.update_order_total()
 
-@receiver(post_save, OrderLineItems)
+@receiver(post_save, sender=OrderLineItems)
 def delete_update_signal(sender, instance, **kwargs):
 
     instance.order.update_order_total()
