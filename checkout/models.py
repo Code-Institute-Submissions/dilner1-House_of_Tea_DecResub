@@ -1,5 +1,6 @@
 import uuid
 from django.db import models
+from products.models import Product
 from django.db.models import Sum
 
 class Order(models.Model):
@@ -37,24 +38,24 @@ class Order(models.Model):
         """
         if not self.order_id:
             self.order_id = self._create_order_id()
-        super().save(•args, ••kwargs)
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.order_id
 
-class OrderLineItems(model.Models):
+class OrderLineItems(models.Model):
     order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems')
     product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)
-    product_weight = models.CharField(null=True, blank=True)
+    product_weight = models.CharField(max_length=4 ,null=True, blank=True)
     quantity = models.IntegerField(null=False, blank=False, default=0)
-    line_item_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blamk=False, editable=False)
+    line_item_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
 
     def save(self, *args, **kwargs):
         """
             Function overides model save method
         """
         self.line_item_total = self.product * self.quantity
-        super().save(•args, ••kwargs)
+        super().save(*args, **kwargs)
 
         def __str__(self):
-        return f'SKU {self.product.sku} on order {self.order.order_id}'
+            return f'SKU {self.product.sku} on order {self.order.order_id}'
