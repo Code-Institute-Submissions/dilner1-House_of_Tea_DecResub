@@ -1,13 +1,15 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
 {% block content %}
 <h1 class="title">Checkout</h1>
 <hr class="divider bg-dark">
 
-</div>
- 
-</div>
+<div class="hi">you wot mate</div>
 {% endblock %}
 
 {% block postloadjs %}
