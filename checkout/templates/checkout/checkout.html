@@ -8,6 +8,25 @@
 {% block content %}
 <h1 class="title">Checkout</h1>
 <hr class="divider bg-dark">
+
+<div class="row">
+    <div class="col-8">
+        <form action="{% url 'checkout' %}" method="POST" id="checkout-form">
+            {% csrf_token %}
+            <fieldset>
+                {{ order_form.name | as_crispy_field }}
+                {{ order_form.country | as_crispy_field }}
+                {{ order_form.postcode | as_crispy_field }}
+                {{ order_form.city | as_crispy_field }}
+                {{ order_form.address1 | as_crispy_field }}
+                {{ order_form.address2 | as_crispy_field }}
+                {{ order_form.county | as_crispy_field }}
+                {{ order_form.email | as_crispy_field }}
+                {{ order_form.phone_number | as_crispy_field }}
+            </fieldset>
+        </form>
+    </div>
+</div>
 {% endblock %}
 
 {% block postloadjs %}
