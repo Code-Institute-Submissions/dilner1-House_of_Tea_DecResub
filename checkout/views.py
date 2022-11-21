@@ -1,15 +1,21 @@
 import stripe
 from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
+from django.conf import settings
 
 from .models import Order
 from .forms import orderForm
 from basket.contexts import current_basket
 
+
 def checkoutView(request):
     """
         This view loads the checkout page
     """
+
+    stripe_public_key = settings.STRIPE_PUBLIC_KEY
+    stripe_secret_Key = settings.STRIPE_SECRET_KEY
+
     basket = request.session.get('basket', {})
     if not basket:
         messages.error(request, 'Oops, looks like there is nothing in your basket yet.')
@@ -20,10 +26,18 @@ def checkoutView(request):
     stripe_total = round(total * 100)
     order_form = orderForm()
     template = 'checkout/checkout.html'
+    stripe.api_key = stripe_secret_Key
+    intent = stripe.PaymentIntent.create(
+        amount=stripe_total,
+        currency='GBP'
+    )
+
+    print(intent)
+
     context = {
         'order_form': order_form,
-        'stripe_public_key': 'pk_test_51Kz0ymB7IvVSIDePssplUQzJPXoeo8xVVHgtkffF1g0SCe2ZL8Eu9bajY3FOl9gKRFyJ1HSwEZufxdL1lo7YFjD600ZWt0Dnzq',
-        'client_secret': 'sk_test_51Kz0ymB7IvVSIDeP2aEl7sCMC3dvS5TyXzk1L4kBXOkAb1eJ0OhDoHegp7bNKXAVmo0KIopNblg6kH6OWqBCpmZI00ltQ9GmcO',
+        'stripe_public_key': 'stripe_public_key',
+        'client_secret': 'stripe_secret_Key',
     }
 
     return render(request, template, context)
