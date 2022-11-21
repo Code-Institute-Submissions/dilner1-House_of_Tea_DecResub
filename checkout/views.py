@@ -4,6 +4,7 @@ from django.contrib import messages
 
 from .models import Order
 from .forms import orderForm
+from basket.contexts import current_basket
 
 def checkoutView(request):
     """
@@ -14,6 +15,9 @@ def checkoutView(request):
         messages.error(request, 'Oops, looks like there is nothing in your basket yet.')
         return redirect(reverse('products'))
 
+    basket_order = current_basket(request)
+    total = basket_order['grand_total']
+    stripe_total = round(total * 100)
     order_form = orderForm()
     template = 'checkout/checkout.html'
     context = {
