@@ -81,13 +81,15 @@
             </tbody>
         </table>
     </div>
+    <div class="container text-center">
+        <a class="title " href="{% url 'checkout' %}">Go to checkout</a>
+    </div>
     {% endfor %}
 {% else %}
 <div class="container text-center">
     <h3>There are no items in your basket</h3>
     <a class="title " href="{% url 'products' %}">Continue Shopping</a>
 </div>
-
 {% endif %}
 </div>
 {% endblock %}
