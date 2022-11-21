@@ -2,59 +2,72 @@
 {% load static %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}
 
 {% block content %}
 <h1 class="title">Checkout</h1>
 <hr class="divider bg-dark">
 
-{% if basket_items %}
-    <div class="text-center pb-3">
-        <div class="text-uppercase">Delivery Charge: £{{delivery}} | Total: £{{grand_total}}</div>
-        <div class="text-uppercase"><a href="{% url 'basket' %}">Go back to my basket</a></div>
-    </div>
-{% else %}
-<div class="text-center pb-3">
-    <div class="text-uppercase"><a href="{% url 'basket' %}">Oh no, there are no items in the basket | Go back to my basket</a></div>
-</div>
-{% endif %}
-<div class="row">
-    <div class="col-md-6 col-xs-12">
-        <form action="{% url 'checkout' %}" method="POST" id="checkout-form">
-            {% csrf_token %}
-            <fieldset class="checkout-form-inputs px-4 py-4">
-                {{ order_form.name | as_crispy_field }}
-                {{ order_form.country | as_crispy_field }}
-                {{ order_form.postcode | as_crispy_field }}
-                {{ order_form.city | as_crispy_field }}
-                {{ order_form.address1 | as_crispy_field }}
-                {{ order_form.address2 | as_crispy_field }}
-                {{ order_form.county | as_crispy_field }}
-                {{ order_form.email | as_crispy_field }}
-                {{ order_form.phone_number | as_crispy_field }}
-            </fieldset>
-            <fieldset class="checkout-form-inputs">
-                <div class="customer-card" id="card-element"></div>
-                <div class="customer-card" id="card-errors"></div>
-            </fieldset>
-           <div class="enter-payment text-center">
-                <button id="submit-payment" class="btn btn-success">Pay</button>
-           </div>
-        </form>
-    </div>
-    <div class="col-6">
-        <div class="text-uppercase text-center">
-            <p>Card Info</p>
-            <div class="mb-3" id="card-element"></div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-2 col-lg-2">
+        </div>
+        <div class="col-sm-8 col-lg-8">
+            <div class="border">
+                <div class="card-header text-center">
+
+                    {% if basket_items %}
+                    <div class="text-center pb-3">
+                        <div class="text-uppercase">Delivery Charge: £{{delivery}} | Total: £{{grand_total}}</div>
+                        <div class="text-uppercase"><a href="{% url 'basket' %}">Go back to my basket</a></div>
+                    </div>
+                    {% else %}
+                    <div class="text-center pb-3">
+                        <div class="text-uppercase"><a href="{% url 'basket' %}">Oh no, there are no items in the basket
+                                | Go back to my basket</a></div>
+                    </div>
+                    {% endif %}
+
+                </div>
+                <div class="card-body ">
+                    <div class="row">
+                        <div class="col-12">
+                            <form action="{% url 'checkout' %}" method="POST" id="checkout-form">
+                                {% csrf_token %}
+                                <fieldset class="checkout-form-inputs px-4 py-4">
+                                    {{ order_form.name | as_crispy_field }}
+                                    {{ order_form.country | as_crispy_field }}
+                                    {{ order_form.postcode | as_crispy_field }}
+                                    {{ order_form.city | as_crispy_field }}
+                                    {{ order_form.address1 | as_crispy_field }}
+                                    {{ order_form.address2 | as_crispy_field }}
+                                    {{ order_form.county | as_crispy_field }}
+                                    {{ order_form.email | as_crispy_field }}
+                                    {{ order_form.phone_number | as_crispy_field }}
+                                </fieldset>
+                                <fieldset class="checkout-form-inputs">
+                                    <div class="customer-card" id="card-element"></div>
+                                    <div class="customer-card" id="card-errors"></div>
+                                </fieldset>
+                                <div class="enter-payment text-center">
+                                    <button id="submit-payment" class="btn btn-success">Pay</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2 col-lg-2">
+            </div>
         </div>
     </div>
-</div>
-{% endblock %}
+    {% endblock %}
 
-{% block postloadjs %}
+    {% block postloadjs %}
     {{ block.super }}
     {{ stripe_public_key|json_script:"id_stripe_public_key" }}
     {{ client_secret|json_script:"id_client_secret" }}
     <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
-{% endblock %}
+    {% endblock %}
