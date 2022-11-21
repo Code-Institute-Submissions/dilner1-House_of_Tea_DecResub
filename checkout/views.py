@@ -17,6 +17,8 @@ def checkoutView(request):
     template = 'checkout/checkout.html'
     context = {
         'order_form': order_form,
+        'stripe_public_key': 'pk_test_51Kz0ymB7IvVSIDePssplUQzJPXoeo8xVVHgtkffF1g0SCe2ZL8Eu9bajY3FOl9gKRFyJ1HSwEZufxdL1lo7YFjD600ZWt0Dnzq',
+        'client_secret': 'sk_test_51Kz0ymB7IvVSIDeP2aEl7sCMC3dvS5TyXzk1L4kBXOkAb1eJ0OhDoHegp7bNKXAVmo0KIopNblg6kH6OWqBCpmZI00ltQ9GmcO',
     }
 
     return render(request, template, context)

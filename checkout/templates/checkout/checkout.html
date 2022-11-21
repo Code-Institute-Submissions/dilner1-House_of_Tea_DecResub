@@ -52,27 +52,7 @@
 {% endblock %}
 
 {% block postloadjs %}
-{{ block.super }}
-{% include 'products/includes/quantity_adjuster_script.html' %}
-<script type="text/javascript">
-    // Update item quantity
-    $('.update-basket').click(function(e) {
-        var form = $(this).prev('.amend-basket-form');
-        form.submit();
-    })
-
-    // Remove item from basket NOT WORKING
-    $('.remove-product').click(function(e) {
-        var csrfToken = "{{ csrf_token }}";
-        var pk = $(this).attr('id').split('remove_')[1];
-        var weight = $(this).data('weight');
-        var url = `/basket/remove/${pk}`;
-        var data = {'csrfmiddlewaretoken': csrfToken, 'weight': weight};
-        
-        $.post(url, data)
-         .done(function() {
-             location.reload();
-         });
-    })
-</script>
+    {{ block.super }}
+    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+    {{ client_secret|json_script:"id_client_secret" }}
 {% endblock %}
