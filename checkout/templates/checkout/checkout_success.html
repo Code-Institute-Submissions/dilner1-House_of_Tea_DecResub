@@ -7,8 +7,12 @@
 
 {% block content %}
 <div class="text-center">
-    <h1>Your order was successfully placed</h1>
+    <h1 class="title">Order placed</h1>
+    <hr class="divider bg-dark">
     <p>Your order number is:</p>
     <p><strong>{{order.order_id}}</strong></p>
+</div>
+<div class="text-center" >
+    <a href="{% url 'products' %}">Return to products page</a>
 </div>
 {% endblock %}
