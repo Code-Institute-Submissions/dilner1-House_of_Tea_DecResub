@@ -33,6 +33,9 @@ def checkoutView(request):
     )
 
     print(intent)
+    if not stripe_public_key:
+        message.warning(request, 'Stripe public key is not present, \
+            you need to set this in the environment before proceeding.')
 
     context = {
         'order_form': order_form,
