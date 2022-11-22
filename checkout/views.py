@@ -11,7 +11,7 @@ from basket.contexts import current_basket
 
 def checkoutView(request):
     """
-        This view loads the checkout page
+        This view loads the checkout page and handles stripe payment request
     """
 
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
@@ -90,6 +90,26 @@ def checkoutView(request):
         'order_form': order_form,
         'stripe_public_key': 'stripe_public_key',
         'client_secret': 'stripe_secret_Key',
+    }
+
+    return render(request, template, context)
+
+def checkout_success(request, order_number):
+    """
+        This view loads the payment success page
+    """
+    save_info = request.session.get('save_info')
+    order = get_object_or_404(Order, order_id=order_id)
+    messages.success(request, f'Order successful. \
+        Your order number is {order_id}. We sent you a \
+        confirmation email to {order.email}.')
+
+    if 'basket' in request.session:
+        del request.session['basket']
+
+    template = 'checkout/checkout_success.html'
+    context = {
+        'order': order,
     }
 
     return render(request, template, context)
