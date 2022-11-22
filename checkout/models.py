@@ -54,7 +54,7 @@ class OrderLineItems(models.Model):
         """
             Function overides model save method
         """
-        self.line_item_total = self.product * self.quantity
+        self.line_item_total = self.product.price * self.quantity
         super().save(*args, **kwargs)
 
         def __str__(self):
