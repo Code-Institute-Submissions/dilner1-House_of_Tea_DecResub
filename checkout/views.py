@@ -1,5 +1,5 @@
 import stripe
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.conf import settings
 
@@ -94,7 +94,7 @@ def checkoutView(request):
 
     return render(request, template, context)
 
-def checkoutSuccessView(request, order_number):
+def checkoutSuccessView(request, order_id):
     """
         This view loads the payment success page
     """

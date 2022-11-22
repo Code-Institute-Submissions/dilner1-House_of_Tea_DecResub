@@ -27,7 +27,7 @@ class Order(models.Model):
         return uuid.uuid4().hex.upper()
 
     def update_order_total(self):
-        self.order_total = self.lineitems.aggregate(Sum('lineitem_total', 'lineitem_total_sum'))
+        self.order_total = self.lineitems.aggregate(Sum('line_item_total'))['line_item_total__sum'] or 0
         if self.order_total < settings.DELIVERY_CHARGE_MAX:
             self.delviery_charge = self.order_total * settings.DELIVERY_CHARGE / 50
         else: 
