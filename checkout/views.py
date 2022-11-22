@@ -94,7 +94,7 @@ def checkoutView(request):
 
     return render(request, template, context)
 
-def checkout_success(request, order_number):
+def checkoutSuccessView(request, order_number):
     """
         This view loads the payment success page
     """

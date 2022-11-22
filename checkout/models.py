@@ -1,6 +1,7 @@
 import uuid
 from django.db import models
 from products.models import Product
+from django.conf import settings
 from django.db.models import Sum
 
 class Order(models.Model):
