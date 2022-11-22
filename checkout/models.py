@@ -1,8 +1,10 @@
 import uuid
+
 from django.db import models
-from products.models import Product
 from django.conf import settings
 from django.db.models import Sum
+
+from products.models import Product
 
 class Order(models.Model):
     order_id = models.CharField(max_length=32, null=False, editable=False)
