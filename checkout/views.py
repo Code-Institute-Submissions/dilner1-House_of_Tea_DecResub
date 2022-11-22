@@ -29,7 +29,7 @@ def checkoutView(request):
     stripe.api_key = stripe_secret_Key
     intent = stripe.PaymentIntent.create(
         amount=stripe_total,
-        currency='GBP'
+        currency='gbp',
     )
 
     print(intent)
