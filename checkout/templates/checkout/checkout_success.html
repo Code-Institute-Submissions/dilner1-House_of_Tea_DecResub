@@ -6,5 +6,9 @@
 {% endblock %}
 
 {% block content %}
-<h1>Success</h1>
+<div class="text-center">
+    <h1>Your order was successfully placed</h1>
+    <p>Your order number is:</p>
+    <p><strong>{{order.order_id}}</strong></p>
+</div>
 {% endblock %}
