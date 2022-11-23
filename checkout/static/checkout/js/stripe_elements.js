@@ -5,8 +5,8 @@ var elements = stripe.elements();
 var card = elements.create('card');
 card.mount('#card-element');
 
-var card = elements.create('card', {style: style});
-card.mount('#card-element');
+// var card = elements.create('card');
+// card.mount('#card-element');
 
 /* Shows live card errors on checkout page */
 card.addEventListener('change', function (event) {
@@ -47,8 +47,8 @@ form.addEventListener('submit', function(e) {
             card.update({'disabled': false })
             $('#submit-payment').attr('disabled', false)
         } else {
-            if (result.paymentIntent.status === 'suceeded') {
-                form.submit
+            if (result.paymentIntent.status === 'succeeded') {
+                form.submit()
             }
                 
         }

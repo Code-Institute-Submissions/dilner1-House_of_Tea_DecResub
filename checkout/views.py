@@ -32,6 +32,7 @@ def checkoutView(request):
         }
         order_form = orderForm(form_data)
         if order_form.is_valid():
+            print("Form is valid")
             order = order_form.save()
             for pk, product_data in basket.items():
                 try:
@@ -59,6 +60,7 @@ def checkoutView(request):
                     order.delete()
                     return redirect(reverse('basket'))
 
+            print("View should be redirecting")
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse('checkout_success', args=[order.order_id]))
         else:
@@ -88,8 +90,8 @@ def checkoutView(request):
 
     context = {
         'order_form': order_form,
-        'stripe_public_key': 'stripe_public_key',
-        'client_secret': 'stripe_secret_Key',
+        'stripe_public_key': stripe_public_key,
+        'client_secret': intent.client_secret,
     }
 
     return render(request, template, context)
