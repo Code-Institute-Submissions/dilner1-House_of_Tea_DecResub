@@ -60,7 +60,7 @@ class OrderLineItems(models.Model):
 
         # if dictionary loop over each dictionary and work out price based on weight
         if type(self.quantity) is dict:
-            print('hi')
+            
         # else
         self.line_item_total = self.product.price * self.quantity
         # end of if statement
