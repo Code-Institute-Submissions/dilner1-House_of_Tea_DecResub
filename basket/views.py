@@ -74,6 +74,7 @@ def removeFromBasketView(request, pk):
             weight = request.POST['weight']
         basket = request.session.get('basket', {})
         if weight:
+            print(pk)
             del basket[pk]['product_weight'][weight]
             if not basket[pk]['product_weight']:
                 basket.pop(pk)

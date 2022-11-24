@@ -57,7 +57,12 @@ class OrderLineItems(models.Model):
         """
             Function overides model save method
         """
+
+        # if dictionary loop over each dictionary and work out price based on weight
+        
+        # else
         self.line_item_total = self.product.price * self.quantity
+        # end of if statement
         super().save(*args, **kwargs)
 
         def __str__(self):

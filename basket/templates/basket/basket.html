@@ -61,7 +61,7 @@
                                             </button>
                                         </div>
                                         <input class="form-control qty_input col-lg-4 col-md-4 col-sm-4 col-xs-4" type="number"
-                                            name="quantity" value="{% if product.product.weight %}{{ product.weight }}{% else %}{{ product.quantity }}{% endif %}" min="1" max="99"
+                                            name="quantity" value="{% if product.product.weight %}{{ product.quantity }}{% else %}{{ product.quantity }}{% endif %}" min="1" max="99"
                                             data-item_id="{{ product.pk }}"
                                             id="id_qty_{{ product.pk }}">
                                         <div class="input-group-append">
@@ -109,7 +109,8 @@
         var csrfToken = "{{ csrf_token }}";
         var pk = $(this).attr('id').split('remove_')[1];
         var weight = $(this).data('weight');
-        var url = `/basket/remove/${pk}`;
+        var url = `/basket/remove/${pk}/`;
+        console.log(pk)
         var data = {'csrfmiddlewaretoken': csrfToken, 'weight': weight};
         
         $.post(url, data)
