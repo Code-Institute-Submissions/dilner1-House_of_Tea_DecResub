@@ -1,0 +1,88 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Kolker+Brush&family=Libre+Baskerville&family=Montserrat:wght@300;500&display=swap');
+
+/* Base Styling */
+body {
+    font-family: 'Montserrat' ,Arial, Helvetica, sans-serif
+    width: 100%;
+}
+
+.title {
+  font-family: 'Libre Baskerville', 'Times New Roman', Times, serif;
+  text-align: center;
+  padding-top: 2rem;
+  color: rgb(50, 50, 50);
+}
+
+/* Navbar styling */
+.logo {
+  font-family: 'Kolker Brush';
+  font-size: 2rem;
+}
+
+.basket-icon > i {
+    font-size: 1.5rem;
+}
+
+.dropdown-menu {
+  background-color: #f6fff8;
+}
+
+.dropdown-item:hover {
+  background-color: rgb(182, 196, 141);
+}
+
+/* Nav Bar Styling */
+.gradient {
+    /* fallback for older browsers */
+    background: rgb(182, 196, 141);
+
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgba(182, 196, 141, 1), rgba(214, 221, 190, 1));
+
+
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(182, 196, 141, 1), rgba(214, 221, 190, 1))
+}
+
+/* Landing Page */
+.home-banner > img {
+  max-height: 500px;
+  background-position: center;
+  object-fit: cover;
+}
+
+.content-image {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background-position: center;
+  object-fit: cover;
+}
+
+.content-title {
+  color: rgb(50, 50, 50);
+}
+
+.content-title:hover {
+  color: rgb(188, 108, 38);
+}
+
+/* Products Page */
+
+.card {
+    display: inline-block;
+    width: 18rem;
+}
+
+.card-text {
+  height: 4rem;
+  overflow-x:hidden;
+  white-space: wrap;
+}
+
+/* Basket Page */
+
+.basket-text {
+  width: 200px;
+}
