@@ -2,4 +2,4 @@
     {"model": "products.categories", "pk": 1, "fields": {"category": "Tea"}},
     {"model": "products.categories", "pk": 2, "fields": {"category": "Pots and Sets"}},
     {"model": "products.categories", "pk": 3, "fields": {"category": "Teaware"}}
-])
+]
