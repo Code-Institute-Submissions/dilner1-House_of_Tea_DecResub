@@ -6,4 +6,18 @@
     <h1 class="title">Contact us</h1>
     <hr class="divider bg-dark">
 </div>
+<form action="{% url 'contact' %}" method="POST" id="contact-form">
+    {% csrf_token %}
+    <fieldset class="contact-form-inputs px-4 py-4">
+        {{ contact_form.title | as_crispy_field }}
+        {{ contact_form.name | as_crispy_field }}
+        {{ contact_form.order_id | as_crispy_field }}
+        {{ contact_form.email | as_crispy_field }}
+        {{ contact_form.body | as_crispy_field }}
+
+    </fieldset>
+    <div class="text-center">
+            <button id="submit-contact" class="btn btn-warning">Send</button>
+    </div>
+</form>
 {% endblock %}

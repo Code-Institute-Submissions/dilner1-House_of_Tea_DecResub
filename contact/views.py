@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse
 from .forms import contactForm
 
 
@@ -14,7 +14,7 @@ def contactView(request):
             'title': request.POST['title'],
             'Body': request.POST['Body'],
             'urgent': request.POST['urgent'],
-            'order_id': request.POST['order_id'],
+            'order_id': request.POST['order_id']
         }
         contact_form = contactForm(form_data)
         if contact_form.is_valid():
