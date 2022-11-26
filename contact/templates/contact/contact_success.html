@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="text-center">
+    <h1 class="title">Customer Contact Form</h1>
+    <hr class="divider bg-dark">
+</div>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-2 col-lg-2">
+        </div>
+        <div class="col-sm-8 col-lg-8">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <p><strong>Your request has been submitted, we will respond to you as soon as we can.</strong></p>
+                        <a href="{% url 'contact' %}">Return to the customer contact page.</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

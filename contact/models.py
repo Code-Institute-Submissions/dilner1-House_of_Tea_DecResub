@@ -7,7 +7,7 @@ class Contact(models.Model):
     title = models.CharField(max_length=120, null=True)
     Body = models.TextField()
     urgent = models.BooleanField(default=False, null=True, blank=True)
-    order_id = models.CharField(max_length=32, null=False, blank=False, editable=False)
+    order_id = models.CharField(max_length=32, null=False, blank=False)
 
     def __str__(self):
         return self.title
