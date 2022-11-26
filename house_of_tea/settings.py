@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'newsletter',
     'contact',
     'suppliers',
+    'storages',
 ]
 
 MIDDLEWARE = [
