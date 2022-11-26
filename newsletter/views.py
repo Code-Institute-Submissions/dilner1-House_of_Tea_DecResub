@@ -8,6 +8,9 @@ def newsletterView(request):
         This view loads the newsletter signup form
     """
     newsletter_form = newsletterForm(request.POST or None)
+    user_email = request.user.email
+    email_exists = Newsletter.objects.filter(email=user_email)
+    print(email_exists)
     if request.method == 'POST':
         form_data = {
             'name': request.POST['name'],
@@ -25,6 +28,8 @@ def newsletterView(request):
 
     context = {
             'newsletter_form': newsletter_form,
+            'user_email': user_email,
+            'email_exists': email_exists
         }
 
     return render(request, 'newsletter/newsletter.html', context)

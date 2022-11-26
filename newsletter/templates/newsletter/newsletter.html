@@ -23,7 +23,11 @@
                                 {{ newsletter_form.email | as_crispy_field }}
                             </fieldset>
                             <div class="text-center">
-                                <button id="submit-newsletter" class="btn btn-success">Signup</button>
+                                {% if email_exists %}
+                                    <button id="submit-newsletter" class="btn btn-warning">Unsubscribe</button>
+                                {% else %}
+                                    <button id="submit-newsletter" class="btn btn-success">Signup</button>
+                                {% endif %}                                
                             </div>
                         </form>
                     </div>
