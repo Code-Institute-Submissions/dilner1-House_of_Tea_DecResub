@@ -9,7 +9,7 @@ class contactForm(forms.ModelForm):
             'name',
             'email',
             'title', 
-            'Body',
+            'body',
             'urgent',
             'order_id',
         )

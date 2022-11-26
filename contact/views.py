@@ -12,9 +12,9 @@ def contactView(request):
             'name': request.POST['name'],
             'email': request.POST['email'],
             'title': request.POST['title'],
-            'Body': request.POST['Body'],
+            'body': request.POST['body'],
             'urgent': request.POST['urgent'],
-            'order_id': request.POST['order_id']
+            'order_id': request.POST['order_id'],
         }
         contact_form = contactForm(form_data)
         if contact_form.is_valid():
