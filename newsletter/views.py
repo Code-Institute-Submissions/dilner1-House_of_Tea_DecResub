@@ -10,7 +10,6 @@ def newsletterView(request):
     newsletter_form = newsletterForm(request.POST or None)
     user_email = request.user.email
     email_exists = Newsletter.objects.filter(email=user_email)
-    print(email_exists)
     if request.method == 'POST':
         form_data = {
             'name': request.POST['name'],
