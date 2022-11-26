@@ -6,8 +6,7 @@ def newsletterView(request):
     """
         This view loads the newsletter signup form
     """
-    newsletter_form = newsletterForm()
-    print(newsletter_form)
+    newsletter_form = newsletterForm(request.POST or None)
     if request.method == 'POST':
 
         form_data = {
@@ -20,7 +19,7 @@ def newsletterView(request):
             newsletter_form.save()
 
     context = {
-        'newsletter_form': newsletter_form,
-    }
+            'newsletter_form': newsletter_form,
+        }
 
     return render(request, 'newsletter/newsletter.html', context)
