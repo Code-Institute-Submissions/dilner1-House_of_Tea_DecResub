@@ -6,4 +6,18 @@
     <h1 class="title">Newsletter Signup</h1>
     <hr class="divider bg-dark">
 </div>
+<div class="row">
+    <div class="col-12">
+        <form action="{% url 'checkout' %}" method="POST" id="newsletter-form">
+            {% csrf_token %}
+            <fieldset class="checkout-form-inputs px-4 py-4">
+                {{ newsletter_form.name | as_crispy_field }}
+                {{ newsletter_form.email | as_crispy_field }}
+            </fieldset>
+            <div class="text-center">
+                <button id="submit-newsletter" class="btn btn-success">Pay</button>
+            </div>
+        </form>
+    </div>
+</div>
 {% endblock %}
