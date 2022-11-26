@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse
 from .forms import newsletterForm
 from .models import Newsletter
 
@@ -20,6 +20,7 @@ def newsletterView(request):
         if newsletter_form.is_valid():
             instance = newsletter_form.save(commit=False)
             print("Form is valid")
+            return redirect(reverse('newsletter_success'))
             if Newsletter.objects.filter(email=instance.email).exists():
                 print('removing email address')
                 Newsletter.objects.filter(email=instance.email).delete()
@@ -32,4 +33,15 @@ def newsletterView(request):
             'email_exists': email_exists
         }
 
-    return render(request, 'newsletter/newsletter.html', context)
+    template = 'newsletter/newsletter.html'
+
+    return render(request, template, context)
+
+def newsletterSuccessView(request):
+    """
+        This view loads the newsletter success page
+    """
+
+    template = 'newsletter/newsletter_success.html'
+
+    return render(request, template)
