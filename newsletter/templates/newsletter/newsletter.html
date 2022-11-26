@@ -8,11 +8,10 @@
 </div>
 <div class="row">
     <div class="col-12">
-        <form action="{% url 'checkout' %}" method="POST" id="newsletter-form">
+        <form action="{% url 'newsletter' %}" method="POST" id="newsletter-form">
             {% csrf_token %}
             <fieldset class="checkout-form-inputs px-4 py-4">
-                {{ newsletter_form.name }}
-                {{ newsletter_form.email }}
+                {{ newsletter_form.as_p }}
             </fieldset>
             <div class="text-center">
                 <button id="submit-newsletter" class="btn btn-success">Signup</button>
