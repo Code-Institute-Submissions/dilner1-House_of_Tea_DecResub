@@ -7,6 +7,7 @@ def newsletterView(request):
         This view loads the newsletter signup form
     """
     newsletter_form = newsletterForm()
+    print(newsletter_form)
     if request.method == 'POST':
 
         form_data = {

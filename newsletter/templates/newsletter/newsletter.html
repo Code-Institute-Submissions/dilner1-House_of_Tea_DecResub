@@ -11,11 +11,11 @@
         <form action="{% url 'checkout' %}" method="POST" id="newsletter-form">
             {% csrf_token %}
             <fieldset class="checkout-form-inputs px-4 py-4">
-                {{ newsletter_form.name | as_crispy_field }}
-                {{ newsletter_form.email | as_crispy_field }}
+                {{ newsletter_form.name }}
+                {{ newsletter_form.email }}
             </fieldset>
             <div class="text-center">
-                <button id="submit-newsletter" class="btn btn-success">Pay</button>
+                <button id="submit-newsletter" class="btn btn-success">Signup</button>
             </div>
         </form>
     </div>
