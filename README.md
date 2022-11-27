@@ -40,11 +40,22 @@ Password: passyp123
 # Deployment
 
 # Credits
+Code Institute P5 Boutique Ado tutorial
 
-Useful websites and tutorials:
+Basket layout
+https://bootstrapious.com/p/bootstrap-shopping-cart
 
+Inspiration
+https://www.teashop.com/black-tea-irish-cream-tea
 
-Bootstrap:
+Adjust increase and decrease button 
+https://www.youtube.com/watch?v=TVA5NxD89-M&ab_channel=MediaUpload
+
+When adding an item to basket redirected to main shopping bag page - should stay on page
+
+Footer bootstrap
+https://mdbootstrap.com/snippets/standard/mdbootstrap/2884987?view=side
+
 
 
 Django All Auth:
@@ -65,6 +76,7 @@ Bootstrap
 ### Hosting
 ElephantSql
 Render
+Amazon Web Services
 
 
 ### Downloaded Requirements
