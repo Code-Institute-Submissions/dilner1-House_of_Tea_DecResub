@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
@@ -8,6 +9,7 @@ def basketView(request):
     """
     return render(request, 'basket/basket.html')
 
+@login_required(login_url='/accounts/login/')
 def addToBasketView(request, pk):
     """
         This view adds an item to the basket

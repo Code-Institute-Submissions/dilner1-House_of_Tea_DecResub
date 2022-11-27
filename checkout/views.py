@@ -2,13 +2,14 @@ import stripe
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.conf import settings
+from django.contrib.auth.decorators import login_required
 
 from .models import Order, OrderLineItems
 from .forms import orderForm
 from products.models import Product
 from basket.contexts import current_basket
 
-
+@login_required(login_url='/accounts/login/')
 def checkoutView(request):
     """
         This view loads the checkout page and handles stripe payment request
