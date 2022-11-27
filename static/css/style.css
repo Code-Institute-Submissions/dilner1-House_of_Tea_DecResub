@@ -86,3 +86,9 @@ body {
 .basket-text {
   width: 200px;
 }
+
+/* footer */
+
+footer {
+  background-color: rgb(182, 196, 141);
+}
