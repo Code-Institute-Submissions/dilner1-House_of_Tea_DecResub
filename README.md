@@ -1,5 +1,7 @@
 # House of Tea
 
+admin: admin
+Password: passyp123
 
 # Features
 
@@ -14,32 +16,6 @@
 # Design Stage
 
 ## wireframes 
-### Desktop homepage layout version one
-![Desktop homepage layout version one]( "Desktop homepage layout version one image")
-
-### Desktop homepage layout version two
-![Desktop homepage layout version two]( "Desktop homepage layout version two image")
-
-### Desktop post page layout
-![Desktop post layout]( "Desktop homepage layout image")
-
-### Desktop profile page layout
-![Desktop profile layout]( "Desktop profile layout image")
-
-### Desktop login layout
-![Desktop login layout]( "Desktop login layout image")
-
-### Mobile homepage layout
-![Mobile homepage layout]( "Mobile homepage layout image")
-
-### Mobile post page layout
-![Mobile post layout]( "Mobile post layout image")
-
-### Mobile profile page layout
-![Mobile profile layout]( "Mobile profile layout image")
-
-### Mobile login layout
-![Mobile login layout]( "Mobile login layout image")
 
 ## UX
 
