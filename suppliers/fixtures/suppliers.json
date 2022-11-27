@@ -1,0 +1,12 @@
+[
+    {
+        "model": "suppliers.supplier",
+        "pk": 1,
+        "fields": {
+            "supplier_name": "Jia Family", 
+            "location": "Hunan Province, China", 
+            "info": "", 
+            "image": "",
+            "image_url": "",
+    }},
+]

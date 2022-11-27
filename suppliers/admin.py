@@ -1,9 +1,9 @@
 from django.contrib import admin
-from .models import Suppliers
+from .models import Supplier
 
 
 class SuppliersAdmin(admin.ModelAdmin):
-    model = Suppliers
+    model = Supplier
 
 
-admin.site.register(Suppliers, SuppliersAdmin)
+admin.site.register(Supplier, SuppliersAdmin)

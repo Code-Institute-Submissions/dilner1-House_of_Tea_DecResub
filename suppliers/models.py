@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class Suppliers(models.Model):
+class Supplier(models.Model):
     supplier_name = models.CharField(max_length=60, null=True)
     location = models.CharField(max_length=60, null=True)
     info = models.TextField()

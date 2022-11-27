@@ -1,13 +1,14 @@
 from django.shortcuts import render
+from .models import Supplier
 
 
 def suppliersView(request):
     """
         This view loads the newsletter signup form
     """
-    suppliers = Suppliers.objects.all()
+    suppliers = Supplier.objects.all()
     context = {
-        'products':products,
+        'suppliers':suppliers,
         }
 
     return render(request, 'suppliers/suppliers.html')
