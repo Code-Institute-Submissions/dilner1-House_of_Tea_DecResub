@@ -2,12 +2,12 @@ from django.shortcuts import render, redirect, reverse, HttpResponse
 from django.contrib.auth.decorators import login_required
 
 
-# Create your views here.
 def basketView(request):
     """
         This view loads the basket page
     """
     return render(request, 'basket/basket.html')
+
 
 @login_required(login_url='/accounts/login/')
 def addToBasketView(request, pk):
@@ -39,6 +39,7 @@ def addToBasketView(request, pk):
     print(request.session['basket'])
     return redirect(redirect_url)
 
+
 def updateBasketView(request, pk):
     """
         This view adds an item to the basket
@@ -63,7 +64,8 @@ def updateBasketView(request, pk):
     request.session['basket'] = basket
     print(request.session['basket'])
     return redirect(reverse(basketView))
-    
+
+
 def removeFromBasketView(request, pk):
     """
         This view removes an item from the basket

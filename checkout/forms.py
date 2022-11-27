@@ -1,6 +1,7 @@
 from django import forms
 from .models import Order
 
+
 class orderForm(forms.ModelForm):
     class Meta:
         model = Order
@@ -15,6 +16,7 @@ class orderForm(forms.ModelForm):
             'address2',
             'county',
         )
+
     def __init__(self, *args, **kwargs):
         """
         Add placeholders and classes, remove auto-generated

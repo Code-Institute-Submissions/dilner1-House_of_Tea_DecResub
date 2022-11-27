@@ -9,6 +9,7 @@ from .forms import orderForm
 from products.models import Product
 from basket.contexts import current_basket
 
+
 @login_required(login_url='/accounts/login/')
 def checkoutView(request):
     """
@@ -65,12 +66,13 @@ def checkoutView(request):
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse('checkout_success', args=[order.order_id]))
         else:
-            messages.error(request, 'There was an error with your information, \
+            messages.error(request, 'There was an error with your information,\
                 please check the form again.')
     else:
         basket = request.session.get('basket', {})
         if not basket:
-            messages.error(request, 'Oops, looks like there is nothing in your basket yet.')
+            messages.error(request, 'Oops, \
+                looks like there is nothing in your basket yet.')
             return redirect(reverse('products'))
 
         basket_order = current_basket(request)
@@ -96,6 +98,7 @@ def checkoutView(request):
     }
 
     return render(request, template, context)
+
 
 def checkoutSuccessView(request, order_id):
     """
