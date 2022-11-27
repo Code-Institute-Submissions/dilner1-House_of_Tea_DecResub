@@ -6,15 +6,28 @@
     <h1 class="title">Our Suppliers</h1>
     <hr class="divider bg-dark">
 </div>
-{% for item in supplier %}
-<div class="card">
+{% for supplier in suppliers %}
 
-  <div class="card-body">
-    <h5 class="card-title">hi</h5>
+  <div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-2 col-lg-2">
+        </div>
+        <div class="col-sm-8 col-lg-8">
 
-
-
-  </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ supplier.supplier_name }}</h5>
+                            <p>Location: {{ supplier.location }}</p>
+                            <P>About them: {{ supplier.info }}</P>
+                            <img class="card-img-top" src="{{ supplier.image.url }}" alt="Card image cap">
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 {% endfor %}
 {% endblock %}
