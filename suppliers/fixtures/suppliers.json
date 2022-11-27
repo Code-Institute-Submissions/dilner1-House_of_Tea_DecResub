@@ -7,7 +7,7 @@
             "location": "Hunan Province, China", 
             "info": "The Jia family has been growing tea in Hunan for several generations, it has been drunk all over the country and is loved by many - and now we bring their expert knowledge to you.", 
             "image": "pexels-pixabay-39347.jpg",
-            "image_url": "https://res.cloudinary.com/ddxxrzq7g/image/upload/v1669511139/pexels-pixabay-39347_gujxap.jpg"
+            "image_url": "https://house-of-tea.s3.eu-central-1.amazonaws.com/pexels-pixabay-39347.jpg"
     }},
     {
         "model": "suppliers.supplier",
@@ -17,7 +17,7 @@
             "location": "Kanto Prefecture, Japan", 
             "info": "Mr and Mrs Saitama have been making tea pots all their lives, with traditional knowlege passed down from their great grandfather. They still employ these methods today to create authentic and beautiful tea sets, that look just as good as art decorations as they are for brewing tea.", 
             "image": "pexels-mikhail-nilov-9304551.jpg",
-            "image_url": "https://res.cloudinary.com/ddxxrzq7g/image/upload/v1669511883/pexels-mikhail-nilov-9304551_eteqd9.jpg"
+            "image_url": "https://house-of-tea.s3.eu-central-1.amazonaws.com/pexels-mikhail-nilov-9304551.jpg"
     }},
     {
         "model": "suppliers.supplier",
@@ -27,6 +27,6 @@
             "location": "Kandy, Sri Lanka", 
             "info": "Famous for its intensely fullbodied tea we have been working alongside Ceylon Tea for a long time. Unfortunately due to recent issues with climate the yield hasn't been as high as previous years, so we are temporarily out of stock. We'll let you know when we can start shipping this wonderful tea again.", 
             "image": "pexels-kelly-2321839.jpg",
-            "image_url": "https://res.cloudinary.com/ddxxrzq7g/image/upload/v1669525501/pexels-kelly-2321839_cmf9wx.jpg"
+            "image_url": "https://house-of-tea.s3.eu-central-1.amazonaws.com/pexels-kelly-2321839.jpg"
     }}
 ]
