@@ -13,10 +13,20 @@
         "model": "suppliers.supplier",
         "pk": 2,
         "fields": {
-            "supplier_name": "Mr and Mrs Saitama", 
+            "supplier_name": "Saitama Kyusu Co.", 
             "location": "Kanto Prefecture, Japan", 
             "info": "Mr and Mrs Saitama have been making tea pots all their lives, with traditional knowlege passed down from their great grandfather. They still employ these methods today to create authentic and beautiful tea sets, that look just as good as art decorations as they are for brewing tea.", 
             "image": "pexels-pixabay-39347.jpg",
             "image_url": "https://res.cloudinary.com/ddxxrzq7g/image/upload/v1669511883/pexels-mikhail-nilov-9304551_eteqd9.jpg"
     }},
+    {
+        "model": "suppliers.supplier",
+        "pk": 3,
+        "fields": {
+            "supplier_name": "Ceylon Tea", 
+            "location": "Kandy, Sri Lanka", 
+            "info": "Famous for its intensely fullbodied tea we have been working alongside Ceylon Tea for a long time. Unfortunately due to recent issues with climate the yield hasn't been as high as previous years, so we are temporarily out of stock. We'll let you know when we can start shipping this wonderful tea again.", 
+            "image": "pexels-kelly-2321839.jpg",
+            "image_url": "https://res.cloudinary.com/ddxxrzq7g/image/upload/v1669525501/pexels-kelly-2321839_cmf9wx.jpg"
+    }}
 ]
