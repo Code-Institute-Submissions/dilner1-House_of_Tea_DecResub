@@ -5,8 +5,18 @@
         "fields": {
             "supplier_name": "Jia Family", 
             "location": "Hunan Province, China", 
-            "info": "", 
-            "image": "",
-            "image_url": "",
+            "info": "The Jia family has been growing tea in Hunan for several generations, it has been drunk all over the country and is loved by many - and now we bring their expert knowledge to you.", 
+            "image": "pexels-pixabay-39347.jpg",
+            "image_url": "https://res.cloudinary.com/ddxxrzq7g/image/upload/v1669511139/pexels-pixabay-39347_gujxap.jpg"
+    }},
+    {
+        "model": "suppliers.supplier",
+        "pk": 2,
+        "fields": {
+            "supplier_name": "Mr and Mrs Saitama", 
+            "location": "Kanto Prefecture, Japan", 
+            "info": "Mr and Mrs Saitama have been making tea pots all their lives, with traditional knowlege passed down from their great grandfather. They still employ these methods today to create authentic and beautiful tea sets, that look just as good as art decorations as they are for brewing tea.", 
+            "image": "pexels-pixabay-39347.jpg",
+            "image_url": "https://res.cloudinary.com/ddxxrzq7g/image/upload/v1669511883/pexels-mikhail-nilov-9304551_eteqd9.jpg"
     }},
 ]
