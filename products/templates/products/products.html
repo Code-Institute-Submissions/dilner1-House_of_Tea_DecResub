@@ -10,13 +10,14 @@
   <hr class="divider bg-dark">
 </a>
 {% if category.category == 'Tea' %}
-<p class="text-center">All our tea is weighted at 100g</p>
+<strong><p class="text-center">All our tea is weighted at 100g</p></strong>
 {% endif %}
 
 {% endfor %}
 {% else %}
 <h1 class="title">Our Products</h1>
 <hr class="divider bg-dark">
+<strong><p class="text-center">All our tea is weighted at 100g</p></strong>
 {% endif %}
 
 {% for product in products %}
