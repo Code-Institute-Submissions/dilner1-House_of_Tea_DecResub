@@ -1,0 +1,4 @@
+User-Agent: *
+Disallowed: /accounts/
+Disallowed: /basket/
+Sitemap: https://house-of-tea.onrender.com/sitemap.xml
