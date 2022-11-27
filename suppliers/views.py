@@ -7,9 +7,10 @@ def suppliersView(request):
         This view loads the newsletter signup form
     """
     suppliers = Supplier.objects.all()
+
     context = {
-        'suppliers':suppliers,
+        'suppliers': suppliers,
         }
 
-    return render(request, 'suppliers/suppliers.html')
+    return render(request, 'suppliers/suppliers.html', context)
 
