@@ -98,7 +98,7 @@
 {% block postloadjs %}
 {{ block.super }}
 {% include 'products/includes/quantity_adjuster_script.html' %}
-<script type="text/javascript">
+<script>
     // Update item quantity
     $('.update-basket').click(function(e) {
         var form = $(this).prev('.amend-basket-form');
