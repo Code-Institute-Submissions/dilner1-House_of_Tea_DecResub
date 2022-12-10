@@ -10,14 +10,14 @@
   <hr class="divider bg-dark">
 </a>
 {% if category.category == 'Tea' %}
-<strong><p class="text-center">All our tea is weighted at 100g</p></strong>
+<p class="text-center"><strong>All our tea is weighted at 100g</strong></p>
 {% endif %}
 
 {% endfor %}
 {% else %}
 <h1 class="title">Our Products</h1>
 <hr class="divider bg-dark">
-<strong><p class="text-center">All our tea is weighted at 100g</p></strong>
+<p class="text-center"><strong>All our tea is weighted at 100g</strong></p>
 {% endif %}
 
 {% for product in products %}
@@ -36,7 +36,7 @@
     {% csrf_token %}
     <div class="mb-3">
       <p class="d-inline">Quantity:</p>
-    <input class="col-2" type="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99" id="id_qty_{{ product.id }}">
+    <input class="col-4 form-control qty_input" type="number" name="quantity" value="1" min="1" max="99" id="id_qty_{{ product.id }}">
     </div>
     <input class="btn btn-info d-block" type="submit" value="Add to Basket">
     

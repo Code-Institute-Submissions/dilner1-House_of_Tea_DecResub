@@ -64,7 +64,7 @@
             aria-expanded="false">
             Products
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <div class="dropdown-menu">
             <a class="dropdown-item" href="{% url 'products' %}">All Products</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="{% url 'products' %}?category=Tea">Tea</a>
@@ -79,7 +79,7 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">Account</a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <div class="dropdown-menu">
             {% if user.is_authenticated %}
             <a class="dropdown-item" href="{% url 'account_logout' %}">Log-out</a>
             <a class="dropdown-item" href="{% url 'contact' %}">Contact us</a>
@@ -104,22 +104,22 @@
   <!-- Footer -->
   <footer>
     <div class="text-center text-lg-start">
-      <hr class="mb-4" />
+      <hr class="mb-4">
 
       <!-- Section: CTA -->
-      <section>
+
         <div class="text-center">
           <a class="text-dark" href="{% url 'newsletter' %}">Sign up to our newsletter</a>
         </div>
-      </section>
-      <hr class="mb-4" />
-      <section class="text-center pb-4">
+
+      <hr class="mb-4">
+      <div class="text-center pb-4">
         <!-- Facebook -->
         <a class="btn btn-outline-dark btn-floating social m-1" href="https://www.facebook.com/profile.php?id=100087992509682" role="button" target="_blank" rel="external"><i class="fab fa-facebook-f"></i></a>
 
         <!-- Twitter -->
         <a class="btn btn-outline-dark btn-floating social m-1" href="https://twitter.com/Houseoftea3" role="button" target="_blank" rel="external"><i class="fab fa-twitter"></i></a>
-      </section>
+      </div>
     </div>
   </footer>
   {% block postloadjs %}
