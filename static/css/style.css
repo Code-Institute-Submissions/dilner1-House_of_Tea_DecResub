@@ -7,11 +7,6 @@ body {
     width: 100%;
 }
 
-footer {
-  position: fixed;
-  bottom: 0;
-}
-
 .title {
   font-family: 'Libre Baskerville', 'Times New Roman', Times, serif;
   text-align: center;

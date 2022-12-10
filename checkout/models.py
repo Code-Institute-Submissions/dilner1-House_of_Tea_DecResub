@@ -33,7 +33,7 @@ class Order(models.Model):
             self.delviery_charge = self.order_total * settings.DELIVERY_CHARGE / 50
         else: 
             self.delviery_charge = 30
-            self.grand_total = order_total + delivery_charge
+            self.grand_total = self.order_total + self.delivery_charge
             self.save()
 
     def save(self, *args, **kwargs):
@@ -59,15 +59,8 @@ class OrderLineItems(models.Model):
         """
             Function overides model save method
         """
-        weight_quantity = self.quantity
-        # if dictionary loop over each dictionary and work out price based on weight
-        if type(self.quantity) is dict:
-            for item in weight_quantity.values():
-                for q in item.values():
-                    print(q)
-                    self.line_item_total = self.product.price * q
-        else:
-            self.line_item_total = self.product.price * self.quantity
+
+        self.line_item_total = self.product.price * self.quantity
         super().save(*args, **kwargs)
 
         def __str__(self):
