@@ -81,8 +81,11 @@
             aria-expanded="false">Account</a>
           <div class="dropdown-menu">
             {% if user.is_authenticated %}
-            <a class="dropdown-item" href="{% url 'account_logout' %}">Log-out</a>
+            <a class="dropdown-item" href="{% url 'account_email' %}">My Account</a>
+            <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="{% url 'contact' %}">Contact us</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="{% url 'account_logout' %}">Log-out</a>
             {% else %}
             <a class="dropdown-item" href="{% url 'account_login' %}">Log-in</a>
             <div class="dropdown-divider"></div>
