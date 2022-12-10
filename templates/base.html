@@ -104,27 +104,27 @@
   </nav>
   {% block content %}
   {% endblock %}
-  <!-- Footer -->
-  <footer>
-    <div class="text-center text-lg-start">
-      <hr class="mb-4">
-
-      <!-- Section: CTA -->
-
-        <div class="text-center">
-          <a class="text-dark" href="{% url 'newsletter' %}">Sign up to our newsletter</a>
+    <!-- Footer -->
+    <footer>
+      <div class="text-center text-lg-start">
+        <hr class="mb-4">
+  
+        <!-- Section: CTA -->
+  
+          <div class="text-center">
+            <a class="text-dark" href="{% url 'newsletter' %}">Sign up to our newsletter</a>
+          </div>
+  
+        <hr class="mb-4">
+        <div class="text-center pb-4">
+          <!-- Facebook -->
+          <a class="btn btn-outline-dark btn-floating social m-1" href="https://www.facebook.com/profile.php?id=100087992509682" role="button" target="_blank" rel="external"><i class="fab fa-facebook-f"></i></a>
+  
+          <!-- Twitter -->
+          <a class="btn btn-outline-dark btn-floating social m-1" href="https://twitter.com/Houseoftea3" role="button" target="_blank" rel="external"><i class="fab fa-twitter"></i></a>
         </div>
-
-      <hr class="mb-4">
-      <div class="text-center pb-4">
-        <!-- Facebook -->
-        <a class="btn btn-outline-dark btn-floating social m-1" href="https://www.facebook.com/profile.php?id=100087992509682" role="button" target="_blank" rel="external"><i class="fab fa-facebook-f"></i></a>
-
-        <!-- Twitter -->
-        <a class="btn btn-outline-dark btn-floating social m-1" href="https://twitter.com/Houseoftea3" role="button" target="_blank" rel="external"><i class="fab fa-twitter"></i></a>
       </div>
-    </div>
-  </footer>
+    </footer>
   {% block postloadjs %}
   {% endblock %}
 
