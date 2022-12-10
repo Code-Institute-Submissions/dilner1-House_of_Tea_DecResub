@@ -78,7 +78,6 @@ body {
 .card-text {
   height: 4rem;
   overflow-x:hidden;
-  white-space: wrap;
 }
 
 /* Basket Page */
@@ -94,6 +93,6 @@ footer {
 }
 
 .social:hover {
-  color: rgb (255,255,255);
+  color: rgb(255,255,255);
   background-color: rgb(188, 108, 38);
 }
