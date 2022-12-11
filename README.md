@@ -15,6 +15,8 @@ Password: passyp123
 
 # Design Stage
 
+The necessity for the inclusion of an e-commerce business model, highlighting the purpose of the application as either B2B or B2C focused, and detailing the core business intents and marketing strategies for the application.
+
 ## wireframes 
 
 ## UX
