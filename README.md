@@ -38,6 +38,54 @@ The necessity for the inclusion of an e-commerce business model, highlighting th
 
 # Testing
 
+validation
+
+CSS
+https://jigsaw.w3.org/css-validator/
+
+HTML
+https://validator.w3.org/
+
+Javascript
+https://jshint.com/
+
+basket.html js
+
+Seven warnings
+11	Expected an identifier and instead saw '<'.
+11	Expected an assignment or function call and instead saw an expression.
+11	Missing semicolon.
+16	Expected an assignment or function call and instead saw an expression.
+23	'template literal syntax' is only available in ES6 (use 'esversion: 6').
+32	Unclosed regular expression.
+32	Unrecoverable syntax error. (100% scanned).
+
+
+stripe_elements.js  
+
+CONFIGURE
+Metrics
+There are 3 functions in this file.
+
+Two warnings
+26	'template literal syntax' is only available in ES6 (use 'esversion: 6').
+51	'template literal syntax' is only available in ES6 (use 'esversion: 6').
+
+Only message regarding undefined variables however these are defined in other pages of code
+
+quantity_adjuster_script.html
+
+CONFIGURE
+Metrics
+There are 2 functions in this file.
+
+One undefined variable
+
+
+Python
+https://extendsclass.com/python-tester.html
+
+contexts.py
 
 # Deployment
 

@@ -4,6 +4,7 @@
 /* Base Styling */
 body {
     font-family: 'Montserrat' ,Arial, Helvetica, sans-serif;
+    min-height: 100%;
     width: 100%;
 }
 

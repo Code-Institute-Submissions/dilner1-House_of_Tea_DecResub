@@ -103,7 +103,7 @@
     $('.update-basket').click(function(e) {
         var form = $(this).prev('.amend-basket-form');
         form.submit();
-    })
+    });
 
     // Remove item from basket NOT WORKING
     $('.remove-product').click(function(e) {
@@ -111,7 +111,7 @@
         var pk = $(this).attr('id').split('remove_')[1];
         var weight = $(this).data('weight');
         var url = `/basket/remove/${pk}/`;
-        console.log(pk)
+        console.log(pk);
         var data = {'csrfmiddlewaretoken': csrfToken, 'weight': weight};
         
         $.post(url, data)

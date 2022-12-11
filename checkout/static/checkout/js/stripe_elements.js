@@ -28,8 +28,8 @@ var form = document.getElementById('checkout-form');
 // Shows card errors on submitting the checkout form 
 form.addEventListener('submit', function(e) {
     e.preventDefault();
-    card.update({'disabled': true })
-    $('#submit-payment').attr('disabled', true)
+    card.update({'disabled': true });
+    $('#submit-payment').attr('disabled', true);
     stripe.confirmCardPayment(clientSecret, {
         payment_method: {
             card: card,
@@ -44,13 +44,13 @@ form.addEventListener('submit', function(e) {
             <span>${result.error.message}</span>
             `;
             $(errorDiv).html(html);
-            card.update({'disabled': false })
-            $('#submit-payment').attr('disabled', false)
+            card.update({'disabled': false });
+            $('#submit-payment').attr('disabled', false);
         } else {
             if (result.paymentIntent.status === 'succeeded') {
-                form.submit()
+                form.submit();
             }
                 
         }
-    })
-})
+    });
+});
