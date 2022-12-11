@@ -169,6 +169,8 @@ Python checker would request a space on either side of the '=' sign however pyth
 **def addToBasketView(request, pk)**:
 Python Checker would require a double space inbetween these lines however as this login required line solely related to this view and only this it is best practice to keep them together. 
 
+Almost all files passed validation - there are notes the explain why this is the case in the relevant app.
+
 
 **Basket**
 
@@ -212,7 +214,7 @@ Line 38 of checkout models does not validate due to an integer issue, however th
 
 **House of Tea**
 
-
+DATABASE_URL can be shortened, currently it explicetely states the database url.
 
 AUTH_PASSWORD_VALIDATORS are too long for validation however these lines cannot be split any further without breaking the site.
 
@@ -264,3 +266,26 @@ AUTH_PASSWORD_VALIDATORS are too long for validation however these lines cannot 
 
 
 **manage.py**
+
+
+## Manual Testing
+
+
+
+## Bugs
+
+
+### Development Bugs
+
+**Aggregate alias in checkout**
+
+
+**Decimal Issue**
+
+
+
+### Unfixed Bugs
+
+**Media Files**
+
+**Selecting Item Weights**

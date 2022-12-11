@@ -13,4 +13,3 @@ def suppliersView(request):
         }
 
     return render(request, 'suppliers/suppliers.html', context)
-

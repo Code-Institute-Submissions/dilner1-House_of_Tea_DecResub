@@ -36,6 +36,7 @@ def newsletterView(request):
 
     return render(request, template, context)
 
+
 def newsletterSuccessView(request):
     """
         This view loads the newsletter success page

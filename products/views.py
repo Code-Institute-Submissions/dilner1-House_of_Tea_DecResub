@@ -3,6 +3,8 @@ from .models import Product, Categories
 from django.db.models import Q
 
 # Create your views here.
+
+
 def productsView(request):
     """
         This view loads the products pages
@@ -23,6 +25,7 @@ def productsView(request):
     }
 
     return render(request, 'products/products.html', context)
+
 
 def productInfoView(request, pk):
     """
