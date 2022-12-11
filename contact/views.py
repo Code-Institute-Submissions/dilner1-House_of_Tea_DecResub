@@ -31,6 +31,7 @@ def contactView(request):
 
     return render(request, template, context)
 
+
 def contactSuccessView(request):
     """
         This view loads the customer contact success page

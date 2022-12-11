@@ -3,10 +3,11 @@ from django.conf import settings
 from django.shortcuts import get_object_or_404
 from products.models import Product
 
+
 def current_basket(request):
 
     basket_items = []
-    total = 0 
+    total = 0
     product_quantity = 0
     basket = request.session.get('basket', {})
 
@@ -41,7 +42,7 @@ def current_basket(request):
                 })
 
     if total < settings.DELIVERY_CHARGE_MAX:
-        delivery = total * settings.DELIVERY_CHARGE/50
+        delivery = total * settings.DELIVERY_CHARGE / 50
         delivery_threshold = settings.DELIVERY_CHARGE_MAX - delivery
 
     else:
@@ -59,6 +60,6 @@ def current_basket(request):
         'grand_total': grand_total,
         'delivery_charge': settings.DELIVERY_CHARGE,
         'delivery_charge_max': settings.DELIVERY_CHARGE_MAX,
-    }
+     }
 
     return context

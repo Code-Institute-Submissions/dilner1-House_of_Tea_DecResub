@@ -2,7 +2,7 @@ from django import forms
 from .models import Order
 
 
-class orderForm(forms.ModelForm):
+class OrderForm(forms.ModelForm):
     class Meta:
         model = Order
         fields = (
@@ -15,7 +15,7 @@ class orderForm(forms.ModelForm):
             'address1',
             'address2',
             'county',
-        )
+         )
 
     def __init__(self, *args, **kwargs):
         """
@@ -33,7 +33,7 @@ class orderForm(forms.ModelForm):
             'address1': 'Street Address 1',
             'address2': 'Street Address 2',
             'county': 'County',
-        }
+         }
 
         self.fields['name'].widget.attrs['autofocus'] = True
         for field in self.fields:

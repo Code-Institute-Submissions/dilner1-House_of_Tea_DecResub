@@ -5,7 +5,7 @@ from django.conf import settings
 from django.contrib.auth.decorators import login_required
 
 from .models import Order, OrderLineItems
-from .forms import orderForm
+from .forms import OrderForm
 from products.models import Product
 from basket.contexts import current_basket
 
@@ -32,7 +32,7 @@ def checkoutView(request):
             'address2': request.POST['address2'],
             'county': request.POST['county'],
         }
-        order_form = orderForm(form_data)
+        order_form = OrderForm(form_data)
         if order_form.is_valid():
             print("Form is valid")
             order = order_form.save()
@@ -47,9 +47,10 @@ def checkoutView(request):
                         )
                         order_line_item.save()
                     else:
-                        for weight, quantity in product_data['item_weight'].items():
+                        for weight, quantity in product_data[
+                                'item_weight'].items():
                             order_line_item = OrderLineItems(
-                                order=order, 
+                                order=order,
                                 product=product,
                                 quantity=product_data,
                                 product_weight=weight,
@@ -78,7 +79,7 @@ def checkoutView(request):
         basket_order = current_basket(request)
         total = basket_order['grand_total']
         stripe_total = round(total * 100)
-        order_form = orderForm()
+        order_form = OrderForm()
         template = 'checkout/checkout.html'
         stripe.api_key = stripe_secret_Key
         intent = stripe.PaymentIntent.create(

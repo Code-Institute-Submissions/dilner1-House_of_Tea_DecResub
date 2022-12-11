@@ -8,7 +8,7 @@ class contactForm(forms.ModelForm):
         fields = (
             'name',
             'email',
-            'title', 
+            'title',
             'body',
             'urgent',
             'order_id',

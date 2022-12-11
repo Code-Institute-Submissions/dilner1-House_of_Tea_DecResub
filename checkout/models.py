@@ -19,19 +19,24 @@ class Order(models.Model):
     address2 = models.CharField(max_length=80, null=True, blank=True)
     county = models.CharField(max_length=80, null=True, blank=True)
     date = models.DateTimeField(auto_now_add=True)
-    delivery_charge = models.DecimalField(max_digits=6, decimal_places=2, null=False, default=0)
-    order_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
-    grand_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
+    delivery_charge = models.DecimalField(max_digits=6, decimal_places=2,
+                                          null=False, default=0)
+    order_total = models.DecimalField(max_digits=10, decimal_places=2,
+                                      null=False, default=0)
+    grand_total = models.DecimalField(max_digits=10, decimal_places=2,
+                                      null=False, default=0)
 
     def _create_order_id(self):
 
         return uuid.uuid4().hex.upper()
 
     def update_order_total(self):
-        self.order_total = self.lineitems.aggregate(Sum('line_item_total'))['line_item_total__sum'] or 0
+        self.order_total = self.lineitems.aggregate(Sum(
+            'line_item_total'
+            ))['line_item_total__sum'] or 0
         if self.order_total < settings.DELIVERY_CHARGE_MAX:
-            self.delviery_charge = self.order_total * settings.DELIVERY_CHARGE / 50
-        else: 
+            self.delviery_charge = self.order_total * settings.DELIVERY_CHARGE / 50 # noqa
+        else:
             self.delviery_charge = 30
             self.grand_total = self.order_total + self.delivery_charge
             self.save()
@@ -49,11 +54,16 @@ class Order(models.Model):
 
 
 class OrderLineItems(models.Model):
-    order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems')
-    product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)
-    product_weight = models.CharField(max_length=4 ,null=True, blank=True)
+    order = models.ForeignKey(Order, null=False, blank=False,
+                              on_delete=models.CASCADE,
+                              related_name='lineitems')
+    product = models.ForeignKey(Product, null=False, blank=False,
+                                on_delete=models.CASCADE)
+    product_weight = models.CharField(max_length=4, null=True, blank=True)
     quantity = models.IntegerField(null=False, blank=False, default=0)
-    line_item_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
+    line_item_total = models.DecimalField(max_digits=6, decimal_places=2,
+                                          null=False, blank=False,
+                                          editable=False)
 
     def save(self, *args, **kwargs):
         """
