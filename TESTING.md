@@ -273,117 +273,132 @@ AUTH_PASSWORD_VALIDATORS are too long for validation however these lines cannot 
 
 Aim: Test responsivness of site on multiple screen sizes
 
+Method: Changing the screen size by opening the inspection tool and loading page on a mobile device
+
+
 <br>
 
 **Home page**
 
-Test:
+Outcome: On a large size screen the product page images are spaced out evenly. On most mobile sizes this was also the case as they cascade down the page, however on the Galaxy Fold and Samsung Galaxy S6 there was some overlap to the side of the screen. This same issue occured with a medium to large size screen such as the Nest Hub. The images sizes were changed to rem instead of px which corrected the problem. 
 
-Outcome:
+
+The navbar successfully changes state from a standard web layout to mobile drop down without any issues.
+
+
+Result: Success.
 
 <br>
 
 **Products Page**
 
-Test:
+Outcome: There is no overlap with the product cards, however on some varying sizes of screens there is a lot of whitespace to the side. This is not critical but work could be done to imrpove it.
 
-Outcome:
+Problem Devices:
+* iPhone XR
+* Pixel 5
+* Surface Duo
+
+Result: Success but more efforts could be made to improve the amount of whitespace.
 
 <br>
 
 **Product Info Page**
 
-Test:
+Outcome: On almost all devices the image scales well alongside the text, alowing the user to easily read about the product whilst having easy access to the add to basket functionality. Only the Galaxy Fold really stood out as the image was very squashed to the side, whilst the long stream of text meant users had to scroll to access the functionality. This seems more of an edge case and could be improved by implimenting scrolling text or moving the image position.
 
-Outcome:
+Problem Devices:
+* Galaxy Fold
+
+Result: Success.
 
 <br>
 
 **Suppliers Page**
 
-Test:
+Outcome: The suppliers page only displays in a cascading fashion so for mobile and desktop devices alike the view remains the same. Only the navbar changes.
 
-Outcome:
+Result: Success.
 
 <br>
 
 **Contact Page**
 
-Test:
+Outcome: 
 
-Outcome:
+Result:
 
 <br>
 
 **Account Page**
 
-Test:
-
 Outcome:
+
+Result:
 
 <br>
 
 **Basket Page**
 
-Test:
-
 Outcome:
+
+Result:
 
 <br>
 
 **Checkout Page**
 
-Test:
-
 Outcome:
+
+Result:
 
 <br>
 
 **Checkout Success Page**
 
-Test:
-
 Outcome:
+
+Result:
 
 <br>
 
 **Register Page**
 
-Test:
-
 Outcome:
+
+Result:
 
 <br>
 
 **Login Page**
 
-Test:
-
 Outcome:
+
+Result:
 
 <br>
 
 **Logout Page**
 
-Test:
-
 Outcome:
+
+Result:
 
 <br>
 
 **Email Page**
 
-Test:
-
 Outcome:
+
+Result:
 
 <br>
 
 **Password Page**
 
-Test:
-
 Outcome:
+
+Result:
 
 <br>
 
