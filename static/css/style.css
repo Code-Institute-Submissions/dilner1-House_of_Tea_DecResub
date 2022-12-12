@@ -2,15 +2,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Kolker+Brush&family=Libre+Baskerville&family=Montserrat:wght@300;500&display=swap');
 
 /* Base Styling */
-body {
-    font-family: 'Montserrat' ,Arial, Helvetica, sans-serif;
-    min-height: 100%;
-    width: 100%;
+html {
+  height: 100%;
 }
 
-.footer {
+body {
+    font-family: 'Montserrat' ,Arial, Helvetica, sans-serif;
+    width: 100%;
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+}
+
+footer {
+  margin-top: 1rem;
   bottom: 0;
-  width: 100%;  
+  left: 0;
+  width: 100%;
+}
+
+.wrapper {
+  flex:1;
 }
 
 .title {

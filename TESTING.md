@@ -535,6 +535,13 @@ Outcome:
 
 ## Bugs
 
+### Footer not sticking to bottom of page
+
+Issue: The footer would not stick to the bottom of the page when there not enough content for example on the signout page. 
+
+Action: Tried different combinations of position, bootstrap navbar-fixed-bottom and 100vh in body css, however when there was content that required scrolling some items would be obscured. The biggest issue was that product information and functionatility would then be hidden by the footer. A wrapper was placed around the content in conjunction with flex display as suggesterd [here](https://kiranworkspace.com/how-to-stick-footer-to-bottom-of-page/). 
+
+Outcome: The footer now remains at the bottom of the screen regardless of the content on the page as it should.
 
 ### Development Bugs
 

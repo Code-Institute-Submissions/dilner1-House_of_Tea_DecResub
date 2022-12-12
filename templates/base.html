@@ -48,6 +48,7 @@
 </head>
 
 <body>
+<div class="wrapper">
   <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light gradient">
     <a class="navbar-brand logo align-middle" href="{% url 'home' %}">House of Tea</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -104,8 +105,9 @@
   </nav>
   {% block content %}
   {% endblock %}
+</div>
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="">
       <div class="text-center mt-4">
 
           <div class="text-center pt-3 pb-3">
@@ -124,7 +126,5 @@
     </footer>
   {% block postloadjs %}
   {% endblock %}
-
 </body>
-
 </html>
