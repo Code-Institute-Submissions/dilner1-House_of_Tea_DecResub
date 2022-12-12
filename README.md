@@ -1,19 +1,59 @@
 # House of Tea
 
+# Contents
+
+<br>
+
+# Introduction
+
 admin: admin
 Password: passyp123
+
+<br>
 
 # Features
 
 ## Existing Features
 
+**Navigation bar**
 
+**Home Page**
+
+**Products Page**
+
+**Product Info Page**
+
+**Suppliers Page**
+
+**Basket Page**
+
+**Checkout Page**
+
+**Checkout Success Page**
+
+**Suppliers Page**
+
+**Signup Page**
+
+**Login Page**
+
+**Signout Page**
+
+**Footer**
 
 ## Features Left to Implement
 
+**Quantity adjuster in Products Page**
 
+**Ability to adjust weight size of product**
+
+**Limit the amount of product a user can select**
+
+<br>
 
 # Design Stage
+
+## Buisness Model
 
 The necessity for the inclusion of an e-commerce business model, highlighting the purpose of the application as either B2B or B2C focused, and detailing the core business intents and marketing strategies for the application.
 
@@ -30,11 +70,23 @@ The necessity for the inclusion of an e-commerce business model, highlighting th
 ### Colour and Styling:
 
 
-### User Stories
+### Search Engine Optimization
 
+
+## User Stories
+
+1. As a user I should to be able to sign in and out of a personal account so I can control what information I provide
+2. As a User I want to be able to browse a selection of related tea products.
+3. As a user I want to be able to select what items and the amount I can purchase
+4. As a user I want to be able to purchase items
+5. 
+
+
+<br>
 
 # Designing the Database Models
 
+https://app.diagrams.net/
 
 # Testing
 

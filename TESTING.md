@@ -271,6 +271,267 @@ AUTH_PASSWORD_VALIDATORS are too long for validation however these lines cannot 
 ## Manual Testing
 
 
+Aim: Test responsivness of site on multiple screen sizes
+
+<br>
+
+**Home page**
+
+Test:
+
+Outcome:
+
+<br>
+
+**Products Page**
+
+Test:
+
+Outcome:
+
+<br>
+
+**Product Info Page**
+
+Test:
+
+Outcome:
+
+<br>
+
+**Suppliers Page**
+
+Test:
+
+Outcome:
+
+<br>
+
+**Contact Page**
+
+Test:
+
+Outcome:
+
+<br>
+
+**Account Page**
+
+Test:
+
+Outcome:
+
+<br>
+
+**Basket Page**
+
+Test:
+
+Outcome:
+
+<br>
+
+**Checkout Page**
+
+Test:
+
+Outcome:
+
+<br>
+
+**Checkout Success Page**
+
+Test:
+
+Outcome:
+
+<br>
+
+**Register Page**
+
+Test:
+
+Outcome:
+
+<br>
+
+**Login Page**
+
+Test:
+
+Outcome:
+
+<br>
+
+**Logout Page**
+
+Test:
+
+Outcome:
+
+<br>
+
+**Email Page**
+
+Test:
+
+Outcome:
+
+<br>
+
+**Password Page**
+
+Test:
+
+Outcome:
+
+<br>
+
+---
+
+Aim: To confirm all navbar links work on the site as intended
+
+Test: 
+
+Outcome:
+
+---
+
+Aim: To confirm all image links work on the site as intended
+
+Test: 
+
+Outcome:
+
+---
+
+Aim: To confirm all in-page text links work on the site as intended
+
+Test: 
+
+Outcome:
+
+---
+
+Aim: To confirm social footer links work on the site as intended
+
+Test: 
+
+Outcome:
+
+---
+
+Aim: To test that user registration is functional and presents correct information
+
+Test: 
+
+Outcome:
+
+---
+
+Aim: To test that user login / logout functions work correctly
+
+Test: 
+
+Outcome:
+
+---
+
+Aim: To test if a user that is not logged in can access any features they should not
+
+Test: 
+
+Outcome:
+
+---
+
+Aim: To test email and password changes update the user information correctly
+
+Test: 
+
+Outcome:
+
+---
+
+Aim: To test the functionality of adding and removing items to the user's basket in Product page
+
+Test: 
+
+Outcome:
+
+---
+
+Aim: To test the functionality of adding and removing items to the user's basket in Product info page
+
+Test: 
+
+Outcome:
+
+---
+
+Aim: To test the functionality of adding and removing items from the basket page
+
+Test: 
+
+Outcome:
+
+---
+
+Aim: To test if checkout form submits correctly with relevant information
+
+Test: 
+
+Outcome:
+
+---
+
+Aim: To test if checkout is easy to manage for the admin with a large amount of orders
+
+Test: 
+
+Outcome:
+
+---
+
+Aim: To test if Stripe payments recieves the order correctly
+
+Test: 
+
+Outcome:
+
+---
+
+Aim: To test if the newletter signup form adds and removes users information correctly
+
+Test: 
+
+Outcome:
+
+---
+
+Aim: To test the contact form submits correctly
+
+Test: 
+
+Outcome:
+
+---
+
+Aim: Confirm 404 page works for unfound page
+
+Test: 
+
+Outcome:
+
+---
+
+Aim: Confirm 500 page works for unknown page
+
+Test: 
+
+Outcome:
+
+
 
 ## Bugs
 
