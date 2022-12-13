@@ -581,6 +581,8 @@ Result: Success
 
 ### Development Bugs
 
+**Footer Placement**
+
 Issue: The footer would not stick to the bottom of the page when there not enough content for example on the signout page. 
 
 Action: Tried different combinations of position, bootstrap navbar-fixed-bottom and 100vh in body css, however when there was content that required scrolling some items would be obscured. The biggest issue was that product information and functionatility would then be hidden by the footer. A wrapper was placed around the content in conjunction with flex display as suggesterd [here](https://kiranworkspace.com/how-to-stick-footer-to-bottom-of-page/). 
@@ -596,12 +598,16 @@ Action: Much older commits were confirmed to work through ongoing testing, I tri
 
 **Media Files**
 
-When switching the debug feature off the static files would be loaded but any images could not. This was an issue with the format I was writing the image files with. For the images used in the home page these were not attached to a model object, so the url was taken directly from S3. For the remaining images these could be found in the database, the issue was the formatting as {{ product.image.url }}, changing this to {{ product.image_url }} solved the issue.
+Issue: When switching the debug feature off any images could not be viewed. 
+
+Action: Initially it was believed this was due to the media and static files being set up incorrectly with S3. As the static files would load correctly it was discovered to be a formatting issue instead. For the images used in the home page these were not in the database, so the url was taken directly from S3. For the remaining images these could be found in the database, the issue was the formatting as {{ product.image.url }}, changing this to {{ product.image_url }} solved the issue.
+
 
 **Aggregate alias in checkout**
 
+Issue: When proceeding to the checkout the error Complex aggregates require an alias, so the checkout would not submit.
 
-**Decimal Issue**
+Action: In the save function self.product did not have a price, correcting this to self.product.price solved the error.
 
 
 ### Unfixed Bugs
@@ -612,8 +618,20 @@ As mentioned in the testing, a user cannot add an item to the basket whenthey ar
 
 For a better user experience the site should allow the user to sign in and immediately have the item added to the basket, although I am not sure how to tackle this currently.
 
+
 **Checkout submitting with all information**
 
-There are several issues here. The user is able to give an invalid phone number number, for example letters instead of numbers. Whenever a user is has reached the delivery threshold charged amounts are shown but not correctly, the delivery information is also missing. When a user has not met the threshold no monetary value is shown apart from the bottom of the page. This seems to be an issue with the views and contexts files.
+There are several issues here. The user is able to give an invalid phone number number, for example letters instead of numbers. Whenever a user is has reached the delivery threshold charged amounts are shown but not correctly, the delivery information is also missing. When a user has not met the threshold no monetary value is shown apart from the bottom of the page. This seems to be an issue with the views and contexts files. 
 
-**Selecting Item Weights**
+If this issue were to be resolved then the amounts would likely be incorrect due to the deciaml module not being able to function correctly as shown in the course. When added this would cause a 500 error across the site with the message: unsupported operand type(s) for *: 'float' and 'decimal.Decimal'. As this error was so severe it was left out but is not correct, several attempts were made to prevent this by consulting stack overflow but no suggestions proved to be fruitful.
+
+
+**Selecting Different Item Weights**
+
+Orignally the tea products were designed with a weight amount, this was planned to be selectable which would also increase the price. Unfortunately when attempting this, items with weights would not show the quantity in the basket page, this would also affect the chackout submission.
+
+The error could be corrected in the checkout app's OrderLineItems model in the save function. This would require an if stetement to determine if the item is a dictionary, iterrate through the values to get each item weight and the corresponding quantity. This would need to be split further however due to the time this took to attemtp to rectify a simpler solution was opted for. Now all tea amounts simply have one weight, compared to other online tea stores this is a missing functionality that would be greatly preferred. This has also led to some redundant code that initially took the weight of an item into concideation. 
+
+In the future this would be a particularly nice function to implement for the user experience.
+
+
