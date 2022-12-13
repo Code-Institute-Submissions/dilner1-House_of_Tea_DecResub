@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect, reverse
 from .forms import newsletterForm
 from .models import Newsletter
+from django.contrib.auth.decorators import login_required
 
 
+@login_required(login_url='/accounts/login/')
 def newsletterView(request):
     """
         This view loads the newsletter signup form
@@ -37,6 +39,7 @@ def newsletterView(request):
     return render(request, template, context)
 
 
+@login_required(login_url='/accounts/login/')
 def newsletterSuccessView(request):
     """
         This view loads the newsletter success page

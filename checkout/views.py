@@ -101,6 +101,7 @@ def checkoutView(request):
     return render(request, template, context)
 
 
+@login_required(login_url='/accounts/login/')
 def checkoutSuccessView(request, order_id):
     """
         This view loads the payment success page

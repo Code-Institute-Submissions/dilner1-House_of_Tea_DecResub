@@ -271,22 +271,21 @@ AUTH_PASSWORD_VALIDATORS are too long for validation however these lines cannot 
 ## Manual Testing
 
 
-Aim: Test responsivness of site on multiple screen sizes
+Aim: Test responsivness of site on multiple screen sizes.
 
-Method: Changing the screen size by opening the inspection tool and loading page on a mobile device
+Method: Changing the screen size by opening the inspection tool and loading page on a mobile device.
 
 
 <br>
 
 **Home page**
 
-Outcome: On a large size screen the product page images are spaced out evenly. On most mobile sizes this was also the case as they cascade down the page, however on the Galaxy Fold and Samsung Galaxy S6 there was some overlap to the side of the screen. This same issue occured with a medium to large size screen such as the Nest Hub. The images sizes were changed to rem instead of px which corrected the problem. 
+Outcome: On a large size screen the product page images are spaced out evenly. On most mobile sizes this was also the case as they cascade down the page, however on the Galaxy Fold and Samsung Galaxy S6 there was some overlap to the side of the screen. This same issue occured with a medium to large size screen such as the Nest Hub. The images sizes were changed to rem instead of px which corrected the problem.
 
 
 The navbar successfully changes state from a standard web layout to mobile drop down without any issues.
 
-
-Result: Success.
+Result: Success
 
 <br>
 
@@ -310,153 +309,169 @@ Outcome: On almost all devices the image scales well alongside the text, alowing
 Problem Devices:
 * Galaxy Fold
 
-Result: Success.
+Result: Success
 
 <br>
 
 **Suppliers Page**
 
-Outcome: The suppliers page only displays in a cascading fashion so for mobile and desktop devices alike the view remains the same. Only the navbar changes.
+Outcome: The suppliers page only displays in a cascading fashion so for mobile and desktop devices alike the view remains the same.
 
-Result: Success.
+Result: Success
 
 <br>
 
 **Contact Page**
 
-Outcome: 
+Outcome: The contact page is a centered form so does not change between screen sizes.
 
-Result:
-
-<br>
-
-**Account Page**
-
-Outcome:
-
-Result:
+Result: Success
 
 <br>
 
 **Basket Page**
 
-Outcome:
+Outcome: The images scale well on all sizes, on very small devices under 520 pixels wide the layout of the table means users have to scroll across to use some of the functionality. Whislt there is no overlapping, forcing the user to scroll is not good user experience, this would require a fundimental restucturing of the layout.
 
-Result:
+Problem Devices:
+* Galaxy Fold
+* Pixel 5
+* iPhone SE]
+* Samsung Galaxy S8
+* Samsung Galaxy S20 Ultra
+
+Result: Partial success, improvements to UX could be made.
 
 <br>
 
 **Checkout Page**
 
-Outcome:
+Outcome: On all screen sizes the form fits the screen without overlapping.
 
-Result:
+Result: Success
 
 <br>
 
 **Checkout Success Page**
 
-Outcome:
+Outcome: On smaller devices the order number takes up more space than the screen will allow so a horizontal scroll was added to alleviate the issue.
 
-Result:
+Result: Success
 
 <br>
 
 **Register Page**
 
-Outcome:
+Outcome: The register page is a centered form so does not change between screen sizes.
 
-Result:
+Result: Success
 
 <br>
 
 **Login Page**
 
-Outcome:
+Outcome: The login page is a centered form so does not change between screen sizes.
 
-Result:
+Result: Success
 
 <br>
 
 **Logout Page**
 
-Outcome:
+Outcome: The logout page is a centered form so does not change between screen sizes.
 
-Result:
+Result: Success
 
 <br>
 
-**Email Page**
+**Account / email Page**
 
-Outcome:
+Outcome: On all but the very smallest devices the form displays well, some of the button positioning could be improved. A margin was added to each button to prevent users from accidentaly clicking incorrectly. On the Galaxy Fold white space can be seen to the side as if the content is slightly too large, it is hard to tell in this instance if it is just the scroll bar without physically having the device to test.
 
-Result:
+Potential Problem Devices:
+* Galaxy Fold
+
+Result: Success
 
 <br>
 
 **Password Page**
 
-Outcome:
+Outcome: The email page is a centered form so does not change between screen sizes.
 
-Result:
+Result: Success
 
 <br>
 
 ---
 
-Aim: To confirm all navbar links work on the site as intended
+Aim: To confirm all navbar links work on the site as intended.
 
-Test: 
+Test: All links were tested whilst signed in to an account and as an unregistered user.
 
-Outcome:
+Outcome: All navigation links worked as expected.
 
----
-
-Aim: To confirm all image links work on the site as intended
-
-Test: 
-
-Outcome:
+Result: Success
 
 ---
 
-Aim: To confirm all in-page text links work on the site as intended
+Aim: To confirm all image links work on the site as intended.
 
-Test: 
+Test: All links were tested whilst signed in to an account and as an unregistered user.
 
-Outcome:
+Outcome: All image navigation links worked as expected.
 
----
-
-Aim: To confirm social footer links work on the site as intended
-
-Test: 
-
-Outcome:
+Result: Success
 
 ---
 
-Aim: To test that user registration is functional and presents correct information
+Aim: To confirm all in-page text links work on the site as intended.
 
-Test: 
+Test: Tested in account, basket, checkout, checkout success and newsletter links whilst signed in and out.
 
-Outcome:
+Outcome: The links that allow you to purchase items or sign up to the newsletter require the user to login first. Because of this an unregisteres user will never be able to add items to a basket and be shown a physical link to the basket as intended. Users cannot access these pages without a link.
+
+Result: Success
+
+---
+
+Aim: To confirm social footer links work on the site as intended.
+
+Test: Clicked links from each page.
+
+Outcome: Always redirected to the correct page in a seperate tab.
+
+Result: Success
+
+---
+
+Aim: To test that user registration is functional and presents correct information.
+
+Test: Try registration with incorrect information and when logged in.
+
+Outcome: Form does not submit when giving an incomplete email address (with just an @ or @gmail) , this is the correct functionality. Form does not submit on a password that is too common, too similar to name or less than 8 characters. When trying to reach the register site when logged in the user is redirected to the home page.
+
+Result: Success
 
 ---
 
 Aim: To test that user login / logout functions work correctly
 
-Test: 
+Test: Attempt to login and logout as intended, then when not already signed-in / signed-out.
 
-Outcome:
+Outcome: Login and logout works on every page. User is returned to the home page when trying to sign-in when already signed-in, the same with logging out.
+
+Result: Success
 
 ---
 
 Aim: To test if a user that is not logged in can access any features they should not
 
-Test: 
+Test: Attempt to redirect to site locations when not logged in, or use functions such as adding to basket when not signed in
 
-Outcome:
+Outcome: When not signed in you can select an item to add to the basket which will direct you to sign in as expected, however when signed in the user is immediately shown an 500 error. For a better user experience this should allow the user to sign in and immediately have the item added to the basket, although I am not sure how to tackle this currently.
+
+Result: Partial succes
 
 ---
 
@@ -466,6 +481,8 @@ Test:
 
 Outcome:
 
+Result:
+
 ---
 
 Aim: To test the functionality of adding and removing items to the user's basket in Product page
@@ -473,6 +490,8 @@ Aim: To test the functionality of adding and removing items to the user's basket
 Test: 
 
 Outcome:
+
+Result:
 
 ---
 
@@ -482,6 +501,8 @@ Test:
 
 Outcome:
 
+Result:
+
 ---
 
 Aim: To test the functionality of adding and removing items from the basket page
@@ -489,6 +510,8 @@ Aim: To test the functionality of adding and removing items from the basket page
 Test: 
 
 Outcome:
+
+Result:
 
 ---
 
@@ -498,6 +521,8 @@ Test:
 
 Outcome:
 
+Result:
+
 ---
 
 Aim: To test if checkout is easy to manage for the admin with a large amount of orders
@@ -505,6 +530,8 @@ Aim: To test if checkout is easy to manage for the admin with a large amount of 
 Test: 
 
 Outcome:
+
+Result:
 
 ---
 
@@ -514,6 +541,8 @@ Test:
 
 Outcome:
 
+Result:
+
 ---
 
 Aim: To test if the newletter signup form adds and removes users information correctly
@@ -521,6 +550,8 @@ Aim: To test if the newletter signup form adds and removes users information cor
 Test: 
 
 Outcome:
+
+Result:
 
 ---
 
@@ -530,6 +561,8 @@ Test:
 
 Outcome:
 
+Result:
+
 ---
 
 Aim: Confirm 404 page works for unfound page
@@ -538,6 +571,8 @@ Test:
 
 Outcome:
 
+Result:
+
 ---
 
 Aim: Confirm 500 page works for unknown page
@@ -545,6 +580,8 @@ Aim: Confirm 500 page works for unknown page
 Test: 
 
 Outcome:
+
+Result:
 
 
 

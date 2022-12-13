@@ -6,7 +6,7 @@
 
 {% block content %}
 <div class="text-center">
-  <h1 class="title">{% trans "My" %}</h1>
+  <h1 class="title">{% trans "My Account" %}</h1>
   <hr class="divider bg-dark">
 </div>
 
@@ -47,9 +47,9 @@
                       {% endfor %}
                     
                     <div class="buttonHolder">
-                          <button class="secondaryAction btn-success" type="submit" name="action_primary" >{% trans 'Make Primary' %}</button>
-                          <button class="secondaryAction btn-warning" type="submit" name="action_send" >{% trans 'Re-send Verification' %}</button>
-                          <button class="primaryAction btn-danger" type="submit" name="action_remove" >{% trans 'Remove' %}</button>
+                          <button class="secondaryAction btn-success m-2" type="submit" name="action_primary" >{% trans 'Make Primary' %}</button>
+                          <button class="secondaryAction btn-warning m-2" type="submit" name="action_send" >{% trans 'Re-send Verification' %}</button>
+                          <button class="primaryAction btn-danger m-2" type="submit" name="action_remove" >{% trans 'Remove' %}</button>
                     </div>
                     
                     </fieldset>
