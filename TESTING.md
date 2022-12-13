@@ -214,7 +214,7 @@ Line 38 of checkout models does not validate due to an integer issue, however th
 
 **House of Tea**
 
-DATABASE_URL can be shortened, currently it explicetely states the database url.
+DATABASE_URL can be shortened, currently it explicetely states the database url. Unfortunately there were issues with accessing my Heroku account for some time now so the site needed to be honsted on render directly. When attempting 
 
 AUTH_PASSWORD_VALIDATORS are too long for validation however these lines cannot be split any further without breaking the site.
 
