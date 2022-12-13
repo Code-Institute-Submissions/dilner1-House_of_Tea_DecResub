@@ -4,7 +4,9 @@
 # Introduction
 
 admin: admin
-Password: passyp123
+Password: passyp1234
+
+Houe of Tea is a site that allows users to browse and purchase traditional tea related products. It is styled to be inviting and simple to use, with a calming colour palette. House of Tea follows the convetions of a online wholesale store similar to [Art of Tea](https://wholesale.artoftea.com/) or [The Tea Spot](https://www.theteaspot.com/collections/top-selling-loose-tea).
 
 <br>
 
@@ -12,41 +14,99 @@ Password: passyp123
 
 ## Existing Features
 
+**Home Page**
+
+From the home page users are able to navigate to the store, this is seperated into three seperate categories. The user is able to navigate to this using the 3 cards or via the nav bar at the top of the page. The mobile site was also designed to be bold and easy to use, but for quciker navigation the sticky nav bar has a drop down menu for easy access to any account settings or store pages.
+
+
+![Home Page](media/homepage.png)
+
+<br>
+
 **Navigation bar**
 
-**Home Page**
+![Navbar](media/navbar.png)
+
+<br>
 
 **Products Page**
 
+![Products page](media/products_page.png)
+
+<br>
+
 **Product Info Page**
 
+![Product info page](media/product_info.png)
+
+<br>
+
 **Suppliers Page**
+
+![Suppliers page](media/suppliers_page.png)
+
+<br>
 
 **Basket Page**
 
+![Basket page](media/basket.png)
+
+<br>
+
 **Checkout Page**
+
+![Checkout Page](media/checkout_form.png)
+
+<br>
+
+**Card element**
+
+![Card element](media/checkout_stripe_card.png)
+
+<br>
 
 **Checkout Success Page**
 
-**Suppliers Page**
+![Checkout success](media/order_success_page.png)
+
+<br>
 
 **Signup Page**
 
+![Signup page](media/register.png)
+
+<br>
+
 **Login Page**
+
+![Sign-in page](media/signin.png)
+
+<br>
 
 **Signout Page**
 
+![Sign out page](media/signout.png)
+
+<br>
+
 **Footer**
+
+![Footer](media/footer.png)
+
+<br>
 
 ## Features Left to Implement
 
+
+<br>
+
 **Quantity adjuster in Products Page**
 
-**Ability to adjust weight size of product**
 
-**Limit the amount of product a user can select**
+<br>
 
 **Newsletter Success page**
+
 
 <br>
 
