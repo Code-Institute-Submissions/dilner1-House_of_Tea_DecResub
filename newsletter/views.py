@@ -12,6 +12,7 @@ def newsletterView(request):
     newsletter_form = newsletterForm(request.POST or None)
     user_email = request.user.email
     email_exists = Newsletter.objects.filter(email=user_email)
+    print(email_exists)
     if request.method == 'POST':
         form_data = {
             'name': request.POST['name'],
@@ -21,7 +22,6 @@ def newsletterView(request):
         if newsletter_form.is_valid():
             instance = newsletter_form.save(commit=False)
             print("Form is valid")
-            return redirect(reverse('newsletter_success'))
             if Newsletter.objects.filter(email=instance.email).exists():
                 print('removing email address')
                 Newsletter.objects.filter(email=instance.email).delete()
@@ -34,17 +34,4 @@ def newsletterView(request):
             'email_exists': email_exists
         }
 
-    template = 'newsletter/newsletter.html'
-
-    return render(request, template, context)
-
-
-@login_required(login_url='/accounts/login/')
-def newsletterSuccessView(request):
-    """
-        This view loads the newsletter success page
-    """
-
-    template = 'newsletter/newsletter_success.html'
-
-    return render(request, template)
+    return render(request, 'newsletter/newsletter.html', context)

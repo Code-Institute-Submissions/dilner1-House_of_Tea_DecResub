@@ -1,8 +1,5 @@
 # House of Tea
 
-# Contents
-
-<br>
 
 # Introduction
 
@@ -48,6 +45,8 @@ Password: passyp123
 **Ability to adjust weight size of product**
 
 **Limit the amount of product a user can select**
+
+**Newsletter Success page**
 
 <br>
 

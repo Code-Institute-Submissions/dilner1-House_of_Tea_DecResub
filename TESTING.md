@@ -191,7 +191,7 @@ Line 38 of checkout models does not validate due to an integer issue, however th
 5. urls.py
 6. views.py
 7. signals.py
-
+8. innit.py
 
 **Contact**
 
@@ -214,7 +214,7 @@ Line 38 of checkout models does not validate due to an integer issue, however th
 
 **House of Tea**
 
-DATABASE_URL can be shortened, currently it explicetely states the database url. Unfortunately there were issues with accessing my Heroku account for some time now so the site needed to be honsted on render directly. When attempting 
+DATABASE_URL can be shortened, currently it explicetely states the database url. Unfortunately there were issues with accessing my Heroku account for some time now so the site needed to be honsted on render directly. At the time of writing I could not correct without breaking the sites database.
 
 AUTH_PASSWORD_VALIDATORS are too long for validation however these lines cannot be split any further without breaking the site.
 
@@ -222,16 +222,6 @@ AUTH_PASSWORD_VALIDATORS are too long for validation however these lines cannot 
 2. settings.py
 3. urls.py
 4. wsgi.py
-
-
-**Newsletter**
-
-1. admin.py
-2. apps.py
-3. forms.py
-4. models.py
-5. urls.py
-6. views.py
 
 
 **Newsletter**
@@ -469,7 +459,7 @@ Aim: To test if a user that is not logged in can access any features they should
 
 Test: Attempt to redirect to site locations when not logged in, or use functions such as adding to basket when not signed in
 
-Outcome: When not signed in you can select an item to add to the basket which will direct you to sign in as expected, however when signed in the user is immediately shown an 500 error. For a better user experience this should allow the user to sign in and immediately have the item added to the basket, although I am not sure how to tackle this currently.
+Outcome: When not signed in you can select an item to add to the basket which will direct you to sign in as expected, however when signed in the user is immediately shown an 500 error. They can continue using the site with a logged in account but the item is not saved to the basket. When a user has a checkout success message this cannot be accessed by an unauthorised user as expected.
 
 Result: Partial succes
 
@@ -477,111 +467,111 @@ Result: Partial succes
 
 Aim: To test email and password changes update the user information correctly
 
-Test: 
+Test: Try to amend email and check via the admin page if changes have been made. Amend password, check by logging out and then in, 
 
-Outcome:
+Outcome: The primary email updates in the database, new password also works correctly.
 
-Result:
+Result: Success
 
 ---
 
-Aim: To test the functionality of adding and removing items to the user's basket in Product page
+Aim: To test the functionality of adding and removing items to the user's basket in Product page.
 
-Test: 
+Test: Test in product page the add to basket button with varying quantities.
 
-Outcome:
+Outcome: The user can add any amount from the product page, any inputs of negative numbers throws an error message and prevents the request from submitting.
 
-Result:
+Result: Success
 
 ---
 
 Aim: To test the functionality of adding and removing items to the user's basket in Product info page
 
-Test: 
+Test: Test in the products info page the quantity selectors increase the amounts and that the amounts are correct in the basket.
 
-Outcome:
+Outcome: The functionality in the product info page also acts in the same way when selecting negative numbers, the quantity adjusters work as expected.
 
-Result:
+Result: Success
 
 ---
 
 Aim: To test the functionality of adding and removing items from the basket page
 
-Test: 
+Test: Test in the basket page the quantity selectors increase the amounts and that the amounts are correct when update is clicked. Click the bin button to check it removes all of 1 specific item.
 
-Outcome:
+Outcome: Update function works for both positive and negative amounts, negative digits completely removes the item without any consequence to re-adding. The bin also removes items immediately and only on the product selected.
 
-Result:
+Result: Success
 
 ---
 
 Aim: To test if checkout form submits correctly with relevant information
 
-Test: 
+Test: Attempt to submit the checkout form with complete and incomplete data. Check that it has submitted in stripe and that this correlates with the admin panel
 
-Outcome:
+Outcome: The user is not able to submit the form without a correct email address or without any of the necessary sections completed. The user is able to give an incorrect number, and is able to use letters to pass this section which should not be the case.
 
-Result:
+Result: Failure
 
 ---
 
-Aim: To test if checkout is easy to manage for the admin with a large amount of orders
+Aim: To test if checkout is easy to manage for the admin with a large amount of orders.
 
-Test: 
+Test: Once a payment has been submitted check the admin panel for incorrect or missing information.
 
-Outcome:
+Outcome: The admin can see the order number, name, date of payment, delivery charge, order total and grand total. As mentioned in the previous test the charged amounts often do not show and are not correct so this test fails. When the order is opened you can see all the users information which is successful bar the payment amounts.
 
-Result:
+Result: Failure
 
 ---
 
 Aim: To test if Stripe payments recieves the order correctly
 
-Test: 
+Test: Make a payment and check stripe for the amount.
 
-Outcome:
+Outcome: The payment is successful on stripe and gives the correct payment amount including any delivery charges.
 
-Result:
+Result: Success
 
 ---
 
 Aim: To test if the newletter signup form adds and removes users information correctly
 
-Test: 
+Test: Signup to email, the next time the form is used it should instead show an unsubscribe button and when clicked remove the users email from the database.
 
-Outcome:
+Outcome: The user is able to sign up to the newsletter with their email address, they can change their primary email address in the account page which does not affect which email is in the newsletter database. This could be improved but the user is able to add and remove email addresses easily, the subscribe / unsubscribe button indicats to the user they are already signed up if their email is in the database.
 
-Result:
+Result: Success
 
 ---
 
 Aim: To test the contact form submits correctly
 
-Test: 
+Test: Check the form cannot be submitted without all fields being valid, then check the form has been submitted to the database.
 
-Outcome:
+Outcome: Form cannot be submitted without all fields containing valid information as intended, the form appears in the amin panel.
 
-Result:
+Result: Success
 
 ---
 
 Aim: Confirm 404 page works for unfound page
 
-Test: 
+Test: Try to access an unknown page
 
-Outcome:
+Outcome: 404 page was displayed.
 
-Result:
+Result: Success
 
 ---
 
 Aim: Confirm 500 page works for unknown page
 
-Test: 
+Test: Force an error to make the 500 page appear
 
-Outcome:
+Outcome: Throughout testing 500 pages have appeared when an error has occured.
 
-Result:
+Result: Success
 
 
 
@@ -589,13 +579,24 @@ Result:
 
 ### Footer not sticking to bottom of page
 
+### Development Bugs
+
 Issue: The footer would not stick to the bottom of the page when there not enough content for example on the signout page. 
 
 Action: Tried different combinations of position, bootstrap navbar-fixed-bottom and 100vh in body css, however when there was content that required scrolling some items would be obscured. The biggest issue was that product information and functionatility would then be hidden by the footer. A wrapper was placed around the content in conjunction with flex display as suggesterd [here](https://kiranworkspace.com/how-to-stick-footer-to-bottom-of-page/). 
 
 Outcome: The footer now remains at the bottom of the screen regardless of the content on the page as it should.
 
-### Development Bugs
+**Newsletter Signup**
+
+Issue: When signing up the email entered the database however the button does not change state. When clicking the signup button again it does remove the users email from the database. After changing primary emails in the account page this caused some issues. The new primary email deleted correctly on occasion, which is a failure. When reverting back to the original primary email this would now not delete.
+
+Action: Much older commits were confirmed to work through ongoing testing, I tried several older versions of code to deduce the issue. After removing the success page and redirect the function works as intended. This is not ideal but the user has the main functionality working now.
+
+
+**Media Files**
+
+When switching the debug feature off the static files would be loaded but any images could not. This was an issue with the format I was writing the image files with. For the images used in the home page these were not attached to a model object, so the url was taken directly from S3. For the remaining images these could be found in the database, the issue was the formatting as {{ product.image.url }}, changing this to {{ product.image_url }} solved the issue.
 
 **Aggregate alias in checkout**
 
@@ -603,9 +604,16 @@ Outcome: The footer now remains at the bottom of the screen regardless of the co
 **Decimal Issue**
 
 
-
 ### Unfixed Bugs
 
-**Media Files**
+**Adding an item to the basket when not signed in**
+
+As mentioned in the testing, a user cannot add an item to the basket whenthey are not signed in, they will be redirected to the signin page which is the intended result. The user is signed in but a 500 error is show, the item is also not added to the basket so users must go back to the products page to select it again.
+
+For a better user experience the site should allow the user to sign in and immediately have the item added to the basket, although I am not sure how to tackle this currently.
+
+**Checkout submitting with all information**
+
+There are several issues here. The user is able to give an invalid phone number number, for example letters instead of numbers. Whenever a user is has reached the delivery threshold charged amounts are shown but not correctly, the delivery information is also missing. When a user has not met the threshold no monetary value is shown apart from the bottom of the page. This seems to be an issue with the views and contexts files.
 
 **Selecting Item Weights**
